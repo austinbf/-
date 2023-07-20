@@ -1,0 +1,44 @@
+/* pages/my/my.wxss */
+.infoContainer{
+  width: 100%;
+  height:300rpx;
+  background-image: linear-gradient(130deg, #f7bd00c2 0%, #fcf40093 85%, #f8cf00 100%);
+  top:0;
+
+
+}
+.head{
+  width: 150rpx;
+  height:150rpx;
+  position: relative;
+  top: 75rpx;
+  left:75%;
+}
+.name{
+
+  color: black;
+  position: relative;
+  width: 150rpx;
+  height:150rpx;
+  font-size: 35rpx;
+  left: 10%;
+  top:50%;
+}
+.mySettings view{
+  width: 100%;
+  height:150rpx;
+  margin:0;
+  padding: 0;
+ background-color: white;
+ margin-top: 0;
+ padding: 0;
+display: flex;
+align-items: center;
+padding-left: 20rpx;
+
+}
+.mySettings image{
+  height: 60rpx;
+  width: 60rpx;
+  padding-right: 20rpx;
+}

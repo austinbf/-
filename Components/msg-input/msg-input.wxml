@@ -1,0 +1,5 @@
+<view class="label">
+<view class="msg">我的</view>
+<view class="date">{{time}}</view>
+
+</view>

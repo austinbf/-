@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/massage/massage",
+    "pages/my/my",
+    "pages/logIn/logIn"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+ 
+      "initialRenderingCache": "static"
+    
+  },
+  "usingComponents": {
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "tabbar": "Components/tabbar/tabbar",
+    "msg-input": "Components/msg-input/msg-input",
+    "van-field": "@vant/weapp/field/index",
+    "Header":"Components/Header/Header"
+  },
+  "sitemapLocation": "sitemap.json"
+}

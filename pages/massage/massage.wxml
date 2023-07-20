@@ -1,0 +1,13 @@
+
+  <input class="search" placeholder="请搜索你的信息">
+</input>
+<view class="msg-search">
+</view>
+<view class="container">
+<msg-input/>
+<msg-input></msg-input>
+<msg-input/>
+</view>
+<image class="addMassage" src="/images/icon/加号 (1).png"/>
+<tabbar></tabbar>
+
