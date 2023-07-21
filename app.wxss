@@ -14,14 +14,10 @@
 page{
   background-color: #f6f6f6;
   font-size: 32rpx;
-  font-family: "Noto Sans SC";
   font-weight: 100;
   
 
 }
-@font-face{
-  font-family: "Noto Sans SC";
-  src: url('/font/SourceHanSansCN-Regular-Alphabetic.woff2');
-}
+
 
 

@@ -22,10 +22,14 @@
 .msg{
   width: 740rpx;
   height:50rpx;
-margin-top:0;
+margin-top:-5px;
+padding-bottom: 3px;
+font-weight: bolder;
+
 }
 .date{
   width: 740rpx;
   height:50rpx;
+  margin-top: -6px;
 }
 

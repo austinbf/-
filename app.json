@@ -3,24 +3,48 @@
     "pages/index/index",
     "pages/massage/massage",
     "pages/my/my",
-    "pages/logIn/logIn"
+    "pages/logIn/logIn",
+    "pages/index1/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black",
- 
-      "initialRenderingCache": "static"
-    
+    "initialRenderingCache": "static"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/icon/主页.png",
+        "selectedIconPath": "/images/icon/选中后的tabbar/主页.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/massage/massage",
+        "iconPath": "/images/icon/短信.png",
+        "selectedIconPath": "/images/icon/选中后的tabbar/短信.png",
+        "text": "信息"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "selectedIconPath": "/images/icon/选中后的tabbar/个人.png",
+        "iconPath": "/images/icon/个人.png"
+      }
+    ]
   },
   "usingComponents": {
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
-    "tabbar": "Components/tabbar/tabbar",
     "msg-input": "Components/msg-input/msg-input",
     "van-field": "@vant/weapp/field/index",
-    "Header":"Components/Header/Header"
+    "Header": "Components/Header/Header"
   },
   "sitemapLocation": "sitemap.json"
 }
