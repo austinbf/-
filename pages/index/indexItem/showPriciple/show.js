@@ -1,4 +1,4 @@
-// pages/index1/index.js
+// pages/index/indexItem/showPriciple/show.js
 Page({
 
   /**

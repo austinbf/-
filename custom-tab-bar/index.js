@@ -41,12 +41,13 @@ Component({
       "iconPath": "/images/icon/主页.png",
       "selectedIconPath": "/images/icon/选中后的tabbar/主页.png",
       "text": "主页"
-    }, {
-      "pagePath": "/pages/massage/massage",
-      "iconPath": "/images/icon/短信.png",
-      "selectedIconPath": "/images/icon/选中后的tabbar/短信.png",
-      "text": "信息"
     },
+    //  {
+    //   "pagePath": "/pages/massage/massage",
+    //   "iconPath": "/images/icon/短信.png",
+    //   "selectedIconPath": "/images/icon/选中后的tabbar/短信.png",
+    //   "text": "信息"
+    // },
   {
     "pagePath": "/pages/my/my",
     "text": "我的",

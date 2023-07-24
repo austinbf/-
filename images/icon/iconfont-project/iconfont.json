@@ -1,0 +1,44 @@
+{
+  "id": "4177864",
+  "name": "微信小程序",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13644721",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "3861437",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "13644706",
+      "name": "个人",
+      "font_class": "geren",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13644708",
+      "name": "短信",
+      "font_class": "duanxin",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "13644720",
+      "name": "主页",
+      "font_class": "zhuye",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    }
+  ]
+}

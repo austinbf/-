@@ -1,1 +1,115 @@
-/* pages/index1/index.wxss */
+.scrollView {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+ margin-top: 80rpx;
+ overflow: hidden;
+}
+.content {
+ width: 45vw;
+ height: 45vw;
+box-sizing:border-box;
+background-color: lightblue;
+color: black;
+display: flex;	
+flex-direction: row;
+align-items: center; 
+justify-content: center; 
+margin-top: 20rpx;
+margin-bottom: 25rpx;
+border-radius: 30px;
+font-size: 50rpx;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.content-hover{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.itemsText{
+  position: relative;
+  left:28rpx;
+}
+
+.content:nth-child(1){
+  background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+
+}
+.content:nth-child(2){
+  background-image: linear-gradient(to right, #ffb347 0%, #ffcc33  51%, #ffb347  100%);
+ 
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+         
+ 
+
+
+.content:nth-child(3){
+  background-image: linear-gradient(to right, #76b852 0%, #8DC26F  51%, #76b852  100%);
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+.content:nth-child(4){
+    background-image: linear-gradient(to right, #e76671 0%, #d48375  51%, #f35562  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 20px;
+
+  
+ 
+}
+.content:nth-child(5){
+    background-image: linear-gradient(to right, #1e3c72 0%, #2a5298  51%, #1e3c72  100%);
+   
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 20px;
+    
+ 
+}
+.content:nth-child(6){
+          
+    background-image: linear-gradient(to right, #cb2d3e 0%, #d33c31  51%, #e01428  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 20px;
+  
+
+ 
+  
+ 
+}

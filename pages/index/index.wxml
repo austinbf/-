@@ -1,2 +1,11 @@
 <tabbar></tabbar>
-<view>我是主页</view>
+<view class="pageRoot">
+  <scroll-view scroll-y="true">
+    <view class="scrollView">
+      <view class="content"  hover-class="content-hover" wx:for="{{items}}" wx:key="index" data-id="{{index}}" bindtap="jumpTo" >
+        <text class="itemsText">{{items[index].text}}</text>
+        <image src="{{items[index].iconPath}}" style="width: 60rpx; height:60rpx; margin-left: 7rpx; position: relative; top:-110rpx ;left:23rpx; z-index: 2; " />
+      </view>
+    </view>
+  </scroll-view>
+</view>

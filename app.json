@@ -4,7 +4,12 @@
     "pages/massage/massage",
     "pages/my/my",
     "pages/logIn/logIn",
-    "pages/index1/index"
+    "pages/index/indexItem/showPriciple/show",
+    "pages/index/indexItem/myMsg/myMsg",
+    "pages/index/indexItem/upLoadText/upLoadText",
+    "pages/index/indexItem/upLoadRecord/upLoadRecord",
+    "pages/index/indexItem/upLoadVideo/upLoadVideo",
+    "pages/index/indexItem/deleteMsg/deleteMsg"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -44,7 +49,8 @@
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "msg-input": "Components/msg-input/msg-input",
     "van-field": "@vant/weapp/field/index",
-    "Header": "Components/Header/Header"
+    "Header": "Components/Header/Header",
+    "van-search": "miniprogram_npm/@vant/weapp/search/index"
   },
   "sitemapLocation": "sitemap.json"
 }
