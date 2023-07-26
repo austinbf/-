@@ -5,7 +5,7 @@
  */
 module.exports = {
   env: {
-    es6: true,
+    es6: false,
     browser: true,
     node: true,
   },

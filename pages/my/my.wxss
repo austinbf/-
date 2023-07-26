@@ -1,28 +1,22 @@
 /* pages/my/my.wxss */
+
 .infoContainer{
-  width: 100%;
-  height:300rpx;
-  background-image: linear-gradient(130deg, #f7bd00c2 0%, #fcf40093 85%, #f8cf00 100%);
-  top:0;
-
-
+  background-color: #fff;
 }
 .head{
   width: 150rpx;
   height:150rpx;
-  position: relative;
-  top: 75rpx;
-  left:75%;
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+
 }
 .name{
-
-  color: black;
-  position: relative;
-  width: 150rpx;
-  height:150rpx;
-  font-size: 35rpx;
-  left: 10%;
-  top:50%;
+  text-align: center;
+  padding-bottom: 20rpx;
 }
 .mySettings view{
   width: 100%;
@@ -41,4 +35,24 @@ padding-left: 20rpx;
   height: 60rpx;
   width: 60rpx;
   padding-right: 20rpx;
+}
+.get_user{
+  margin-top: 130rpx;
+  display: flex;
+  align-items: center;
+}
+.get_user image{
+  width: 200rpx;
+  height:200rpx;
+  border-radius: 20rpx;
+}
+.get_user van-cell-group{
+  margin-top: 120rpx;
+  margin-left: 40rpx;
+  border-bottom: 1px solid black;
+}
+.logIn{
+  margin-top: 30rpx;
+  width: 50%;
+  
 }

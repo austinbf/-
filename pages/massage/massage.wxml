@@ -1,13 +1,2 @@
-
-<van-search value="{{ value }}" placeholder="搜索" />
-
-<view class="msg-search">
-</view>
-<view class="container">
-<msg-input/>
-<msg-input></msg-input>
-<msg-input/>
-</view>
-<image class="addMassage" src="/images/icon/加号 (1).png"/>
-<tabbar></tabbar>
-
+<!--pages/massage/massage.wxml-->
+<text>pages/massage/massage.wxml</text>

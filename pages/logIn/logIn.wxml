@@ -1,2 +1,22 @@
-<!--pages/logIn/logIn.wxml-->
-<text>pages/logIn/logIn.wxml</text>
+<view class="con-box">
+<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <image class="avatar" src="{{avatarUrl}}"></image>
+</button> 
+<view class="name-con"></view>
+<form bindsubmit="getUserName"> <!--定义提交事件-->
+   <view class="cu-form-group">
+        <van-cell-group>
+  <van-field
+  label="昵称："
+    type="nickname" name="nickname"
+    placeholder="请输入用户名"
+    border="{{ false }}" 
+  />
+</van-cell-group>
+ 	</view>
+ 	<view class="up-bt">
+        <button form-type="submit" role="button" aria-disabled="false" class="save-bt cu-btn block bg-blue margin-tb-sm lg">确认</button>
+      </view>
+ </form>
+
+</view>

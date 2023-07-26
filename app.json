@@ -9,7 +9,12 @@
     "pages/index/indexItem/upLoadText/upLoadText",
     "pages/index/indexItem/upLoadRecord/upLoadRecord",
     "pages/index/indexItem/upLoadVideo/upLoadVideo",
-    "pages/index/indexItem/deleteMsg/deleteMsg"
+    "pages/index/indexItem/deleteMsg/deleteMsg",
+    "pages/my/settingsPages/zhaomu/zhaomu",
+    "pages/my/settingsPages/edit/edit",
+    "pages/my/settingsPages/emergency/emergency",
+    "pages/my/settingsPages/aboutUs/aboutUs",
+    "pages/my/settingsPages/future/future"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,7 +55,8 @@
     "msg-input": "Components/msg-input/msg-input",
     "van-field": "@vant/weapp/field/index",
     "Header": "Components/Header/Header",
-    "van-search": "miniprogram_npm/@vant/weapp/search/index"
+    "van-search": "miniprogram_npm/@vant/weapp/search/index",
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index"
   },
   "sitemapLocation": "sitemap.json"
 }

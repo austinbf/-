@@ -1,9 +1,9 @@
 
 
-<van-tabbar active="{{ active }}" bind:change="onChange" active-color="black">
+<van-tabbar active="{{ active }}" bind:change="onChange" active-color="black" >
   <van-tabbar-item wx:for="{{list}}"  wx:key="index">
   <image slot="icon" src="{{item.iconPath}}" style="width: 40rpx; height:40rpx;" />
-  <image slot="icon-active" src="{{item.selectedIconPath}}" style="width: 40rpx; height:40rpx;"/>
+  <image slot="icon-active" src="{{item.selectedIconPath}}" style="width: 40rpx; height:40rpx; "/>
   {{item.text}}
   </van-tabbar-item>
      

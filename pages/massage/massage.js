@@ -1,10 +1,11 @@
-// pages/list/list.js
+// pages/massage/massage.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+
   },
 
   /**

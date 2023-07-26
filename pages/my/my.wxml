@@ -1,17 +1,30 @@
 <!--pages/my/my.wxml-->
 <view class="infoContainer">
-<image src="/images/微信图片_20230717085845.jpg" class="head"/>
-<view class="info">
-<view class="name">cbbbbbbb</view>
-</view>
+  <image src="{{avatarUrl}}" class="head" />
+  <view class="info">
+    <view class="name">{{name}}</view>
+  </view>
 </view>
 
+<button bindtap="showPopup"  wx:if="{{LogIn==true}}" >登录</button>
+<!--弹出框-->
+<van-popup show="{{ show }}" round closeable close-icon="close" position="bottom" custom-style="height: 50%;  " bind:close="onClose">
+  <form class="get_user" bindsubmit="getUserName">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+    <van-cell-group>
+      <van-field label="昵称：" type="nickname" name="nickname" placeholder="请输入用户名" border="{{ false }}" input-align="left" />
+    </van-cell-group>
+    <button type="primary"  class="logIn" form-type="submit" role="button" aria-disabled="false" bindtap="onClose">登录</button>
+  </form>
+ 
+</van-popup>
+<!--settings-->
 <view class="mySettings">
-<view class="recruit"><image src="/images/icon/icon-person-hezuo2.png"/><text>招募合伙人</text></view>
-<view class="personalInfoSetting"> <image src="/images/icon/编辑.png"/> <text>常用信息编辑</text></view>
-<view calss="sos">  <image src="/images/icon/电话.png"/><text>紧急呼叫</text></view>
-<view> <image src="/images/icon/关于我们.png"/><text>关于我们</text></view>
-<view> <image src="/images/icon/敬请期待.png"/><text>敬请期待...</text></view>
+  <view wx:for="{{settings}}" wx:key="index" data-id="{{index}}" bindtap="jumpTo">
+    <image src="{{settings[index].iconPath}}" />
+    <text>{{settings[index].text}}</text>
+  </view>
 </view>
 <tabbar></tabbar>
-
