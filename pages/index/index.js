@@ -30,11 +30,14 @@ Page({
 "pagePath":"./indexItem/deleteMsg/deleteMsg"}]
   },
   jumpTo(e){
+    
+    
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: this.data.items[id].pagePath,
     })
   },
+ 
   /**
    * 生命周期函数--监听页面加载
    */

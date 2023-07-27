@@ -1,18 +1,29 @@
 // pages/index/indexItem/myMsg/myMsg.js
+const db = wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    myMsgDataObj:''
   },
-
+showData(){
+console.log(this.data.myMsgDataObj);
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+db.collection('textData').get({
+  success:res=>{
+    
+    this.setData({
+      myMsgDataObj:res.data
+    })
+    console.log(myMsgDataObj);
+  }
+})
   },
 
   /**

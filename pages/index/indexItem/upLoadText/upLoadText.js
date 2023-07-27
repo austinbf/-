@@ -1,13 +1,59 @@
 // pages/index/indexItem/upLoadText/upLoadText.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    noteTitle: '',
+    noteContent: '',
+    date:''
+  },
+  onTitleInput: function(e) {
+    this.setData({
+      noteTitle: e.detail.value
+    });
   },
 
+  onContentInput: function(e) {
+    this.setData({
+      noteContent: e.detail.value
+    });
+  },
+
+  addNote: function() {
+    const { noteTitle, noteContent } = this.data;
+    this.setData({
+      "date":new Date(Date.parse(new Date())+ 60*60*1000*8).toISOString().substring(0,10)
+    })
+    if (noteTitle.trim() === '' || noteContent.trim() === '') {
+      wx.showToast({
+        title: '标题和内容不能为空',
+        icon: 'none'
+      });
+      return;   
+    }
+    else{
+      db.collection('textData').add({
+        "data":{
+          "noteTitle":this.data.noteTitle,
+          "noteContent":this.data.noteContent,
+         "date":this.data.date
+        }
+      });
+       // 添加成功后，清空输入框
+       this.setData({
+         noteTitle: '',
+         noteContent: ''
+       });
+   
+       wx.showToast({
+         title: '添加成功'
+       });
+    }
+   
+  },
   /**
    * 生命周期函数--监听页面加载
    */

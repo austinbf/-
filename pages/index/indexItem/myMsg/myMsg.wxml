@@ -3,11 +3,14 @@
 
 <view class="msg-search">
 </view>
-<view class="container">
-<msg-input/>
-<msg-input></msg-input>
-<msg-input/>
+<view class="container" class="container1" wx:for="{{myMsgDataObj}}" wx:key="index">
+  <view class="label">
+<view class="msg">{{myMsgDataObj[index].noteTitle}}</view>
+<view class="date">{{myMsgDataObj[index].date}}</view>
 </view>
-<image class="addMassage" src="/images/icon/加号 (1).png"/>
+</view>
+<button bindtap="showData">监看data数据</button>
+<view class="noMassage" wx:if="{{ myMsgDataObj}} ==''"> <text>暂无信息</text></view>
+<!-- <image class="addMassage" src="/images/icon/加号 (1).png"/> -->
 <tabbar></tabbar>
 

@@ -25,6 +25,9 @@
   <view wx:for="{{settings}}" wx:key="index" data-id="{{index}}" bindtap="jumpTo">
     <image src="{{settings[index].iconPath}}" />
     <text>{{settings[index].text}}</text>
+  
   </view>
+ 
 </view>
+
 <tabbar></tabbar>

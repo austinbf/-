@@ -1,5 +1,5 @@
 // Components/msg-input/msg-input.js
-
+const db = wx.cloud.database();
 
 Component({
   /**
@@ -12,8 +12,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-value:'',
-time:'2020-11.22'
+    noteTitle: '',
+    noteContent: '',
+    date:''
 
   },
 
@@ -28,5 +29,5 @@ time:'2020-11.22'
       console.log(event.detail);
     },
     
-  }
+  },
 })

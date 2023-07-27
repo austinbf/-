@@ -1,1 +1,54 @@
-/* pages/index/indexItem/upLoadText/upLoadText.wxss */
+/* .uploadText input:nth-child(1){
+  
+  border-bottom: black 1px solid;
+  font:larger bolder;
+  font-weight: bolder;
+  font-size: 40rpx;
+}
+.uploadText input:nth-child(2){
+  height:60%;
+  background-color: blue;
+}
+.uploadText{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+ */
+ 
+ .container {
+  padding: 20rpx;
+}
+.form-group {
+  margin-top: 20rpx;
+  width: 100%;
+}
+.note-title{
+  height:100rpx; 
+  font-size: 40rpx;
+  font-weight: bold;
+  border-bottom: 4rpx solid #E0E0E0;
+}
+.note-content{
+  font-size: 28rpx;
+  height:70vh;
+}
+.note-title,
+.note-content {
+  width: 100%;
+  padding: 10rpx; 
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+  background-color:  #f8cf00 ;
+  color: #fff;
+  font-size: 28rpx;
+  border: none;
+  border-radius: 5rpx;
+}
