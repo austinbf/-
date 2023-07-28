@@ -42,11 +42,13 @@ Page({
          "date":this.data.date
         }
       });
+      console.log(this.data.noteContent)
        // 添加成功后，清空输入框
        this.setData({
          noteTitle: '',
          noteContent: ''
        });
+       console.log(this.data.noteContent)
    
        wx.showToast({
          title: '添加成功'

@@ -9,8 +9,8 @@
 <view class="date">{{myMsgDataObj[index].date}}</view>
 </view>
 </view>
-<button bindtap="showData">监看data数据</button>
-<view class="noMassage" wx:if="{{ myMsgDataObj}} ==''"> <text>暂无信息</text></view>
+<!-- <button bindtap="showData">监看data数据</button> -->
+<view class="noMassage" wx:if="{{myMsgDataObj==''}}"> <text>暂无信息</text></view>
 <!-- <image class="addMassage" src="/images/icon/加号 (1).png"/> -->
 <tabbar></tabbar>
 
