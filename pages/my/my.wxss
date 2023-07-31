@@ -2,6 +2,7 @@
 
 .infoContainer{
   background-color: #fff;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
 }
 .head{
   width: 150rpx;
@@ -18,17 +19,27 @@
   text-align: center;
   padding-bottom: 20rpx;
 }
+.mySettings{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20rpx;
+}
 .mySettings view{
-  width: 100%;
-  height:150rpx;
-  margin:0;
+  width: 95%;
+  height:130rpx;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
   padding: 0;
  background-color: white;
- margin-top: 0;
+
  padding: 0;
 display: flex;
 align-items: center;
+
 padding-left: 20rpx;
+border-radius: 20px;
+margin-bottom: 20rpx;
 
 }
 .mySettings image{
@@ -37,22 +48,33 @@ padding-left: 20rpx;
   padding-right: 20rpx;
 }
 .get_user{
-  margin-top: 130rpx;
+  margin-top: 60rpx;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .get_user image{
   width: 200rpx;
   height:200rpx;
   border-radius: 20rpx;
 }
-.get_user van-cell-group{
-  margin-top: 120rpx;
-  margin-left: 40rpx;
+.get_user input{
+  margin-top: 20rpx;
   border-bottom: 1px solid black;
 }
 .logIn{
   margin-top: 30rpx;
   width: 50%;
-  
+}
+.logOutPopup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logOutPopup button{
+  margin-top: 8rpx;
+  width: 40%;
+  height: 100rpx;
+  border-radius: 4px;
+  display: inline-block;
 }

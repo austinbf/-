@@ -1,5 +1,6 @@
 // pages/my/my.js
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const app=getApp(); 
 Page({
 
   /**
@@ -7,10 +8,11 @@ Page({
    */
   
   data: {
-    "name":'',
-    "imgUrl":'',
+    "theme": wx.getSystemInfoSync().theme,
     "show":false,
-    "LogIn":true,
+    "show1":false,
+    "showLogIn":true,
+    "nickName":'',
     "avatarUrl": defaultAvatarUrl,
     "value": '',
     "settings":[
@@ -34,9 +36,9 @@ Page({
       "iconPath":"/images/icon/敬请期待.png",
       "pagePath":"/pages/my/settingsPages/future/future"
     },
-      {"text":'退出登录',
-      "iconPath":"/images/icon/退出登录.png",
-      "pagePath":"./indexItem/deleteMsg/deleteMsg"}
+      // {"text":'退出登录',
+      // "iconPath":"/images/icon/退出登录.png",
+      // "pagePath":"./indexItem/deleteMsg/deleteMsg",}
     ]
         },
 
@@ -48,27 +50,57 @@ Page({
    })
   },
   onChooseAvatar(e) {
-    const { avatarUrl } = e.detail 	//获取图片临时路径
+    const { avatarUrl } = e.detail 
+   
     this.setData({
       avatarUrl,
     })
+    if(this.data.avatarUrl==defaultAvatarUrl){
+      wx.showToast({
+        title: '头像不能为空',
+        icon:'error'
+      })
+    }
+    app.globalData.userInfo.avatarUrl = avatarUrl
+  
   },
   getUserName(e) {
-    var name=e.detail.value.nickname;
-   this.setData({
-     name:e.detail.value.nickname
-   })
-   if(name){
+    app.globalData.userInfo.nickName = e.detail.value.nickname
      this.setData({
-LogIn:false
+      nickName:e.detail.value.nickname
      })
-   }
+     if(this.data.nickName){
+      this.setData({ showLogIn: false });
+     }
+     else
+     {
+       wx.showToast({
+         title: '昵称不能为空',
+         icon:'error'
+       })
+     }
   },
-  showPopup() {
+  logIn() {
     this.setData({ show: true });
+  let db=wx.cloud.database();
     console.log(this.data.show);
   },
-
+logOut(){
+this.setData({
+  avatarUrl:defaultAvatarUrl,
+  nickName:'',
+  show1:false,
+  showLogIn:true
+})
+},
+cancelLogOut(){
+  this.setData({
+    show1:false
+  })
+},
+showPopup(){
+  this.setData({ show1: true });
+},
   onClose() {
     this.setData({ show: false });
   },
@@ -81,7 +113,11 @@ LogIn:false
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    wx.onThemeChange((result) => {
+      this.setData({
+        theme: result.theme
+      })
+    })
   },
 
   /**

@@ -1,5 +1,6 @@
 // pages/my/settingsPages/zhaomu/zhaomu.js
 const db = wx.cloud.database()
+const app=getApp()
 Page({
 
   /**
@@ -9,15 +10,17 @@ Page({
 dataObj:''
   },
 getData(){
-db.collection('information').get({
-  success:res=>{
-    console.log(res);
-    this.setData({
-      dataObj:res.data
-    })
-  }
-})
+// db.collection('information').get({
+//   success:res=>{
+//     console.log(res);
+//     this.setData({
+//       dataObj:res.data
+//     })
+//   }
+// })
 
+  app.globalData.userInfo.nickName="1111"
+  console.log(app.globalData.userInfo)
 },
   /**
    * 生命周期函数--监听页面加载

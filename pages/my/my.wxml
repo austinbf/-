@@ -1,21 +1,22 @@
 <!--pages/my/my.wxml-->
 <view class="infoContainer">
-  <image src="{{avatarUrl}}" class="head" />
+  <image src="{{avatarUrl}}" class="head" style="border-radius: 30px;" />
   <view class="info">
-    <view class="name">{{name}}</view>
+    <view class="name">{{nickName}}</view>
   </view>
 </view>
 
-<button bindtap="showPopup"  wx:if="{{LogIn==true}}" >登录</button>
+<button bindtap="logIn" wx:if="{{showLogIn}}" >登录</button>
 <!--弹出框-->
-<van-popup show="{{ show }}" round closeable close-icon="close" position="bottom" custom-style="height: 50%;  " bind:close="onClose">
-  <form class="get_user" bindsubmit="getUserName">
-    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-      <image class="avatar" src="{{avatarUrl}}"></image>
-    </button>
-    <van-cell-group>
-      <van-field label="昵称：" type="nickname" name="nickname" placeholder="请输入用户名" border="{{ false }}" input-align="left" />
-    </van-cell-group>
+<van-popup show="{{ show }}" round closeable  position="bottom" custom-style="height: 50%;  " bind:close="onClose">
+  <form class="get_user" bindsubmit="getUserName" >
+    <button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button>
+    <view style="width: 500rpx;">
+    <text style="display: inline  ;">请输入：</text>
+    <input label="昵称：" type="nickname" name="nickname" placeholder="请输入用户名" border="{{ false }}" input-align="left" /></view>
+   
     <button type="primary"  class="logIn" form-type="submit" role="button" aria-disabled="false" bindtap="onClose">登录</button>
   </form>
  
@@ -27,7 +28,22 @@
     <text>{{settings[index].text}}</text>
   
   </view>
+  <view wx:if="{{showLogIn==false}}">
+    <image src="/images/icon/退出登录.png" />
+    <text bindtap="showPopup" >退出登录</text>
+    
+  </view>
  
 </view>
+<van-popup
+  show="{{show1 }}"
+  round
+  position="bottom"
+  custom-style="height: 30%"
+  class="logOutPopup"
+>
+<view>
+<button type="default" bindtap="cancelLogOut" >取消</button><button type="primary" bindtap="logOut">确认</button></view>
+</van-popup>
 
 <tabbar></tabbar>

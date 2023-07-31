@@ -3,12 +3,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content:space-evenly;
- margin-top: 80rpx;
+
  overflow: hidden;
 }
 .content {
  width: 45vw;
- height: 45vw;
+ height: 52vw;
 box-sizing:border-box;
 background-color: lightblue;
 color: black;
@@ -16,15 +16,15 @@ display: flex;
 flex-direction: row;
 align-items: center; 
 justify-content: center; 
-margin-top: 20rpx;
+margin-top: 10rpx;
 margin-bottom: 25rpx;
-border-radius: 30px;
+border-radius: 20px;
 font-size: 50rpx;
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
 
 }
 .content-hover{
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
@@ -41,7 +41,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
+
   border-radius: 20px;
 
 }
@@ -53,7 +53,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
+ 
   border-radius: 20px;
 }
          
@@ -68,7 +68,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
+
   border-radius: 20px;
 }
 .content:nth-child(4){
@@ -78,7 +78,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
-    box-shadow: 0 0 20px #eee;
+
     border-radius: 20px;
 
   
@@ -92,7 +92,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
-    box-shadow: 0 0 20px #eee;
+
     border-radius: 20px;
     
  
@@ -105,7 +105,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
-    box-shadow: 0 0 20px #eee;
+
     border-radius: 20px;
   
 
