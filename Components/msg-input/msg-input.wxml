@@ -1,5 +1,0 @@
-<view class="label">
-<view class="msg">{{noteTitle}}</view>
-<view class="date">{{date}}</view>
-
-</view>

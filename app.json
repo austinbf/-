@@ -1,9 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/massage/massage",
     "pages/my/my",
-    "pages/logIn/logIn",
     "pages/index/indexItem/showPriciple/show",
     "pages/index/indexItem/myMsg/myMsg",
     "pages/index/indexItem/upLoadText/upLoadText",
@@ -36,12 +34,6 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/massage/massage",
-        "iconPath": "/images/icon/短信.png",
-        "selectedIconPath": "/images/icon/选中后的tabbar/短信.png",
-        "text": "信息"
-      },
-      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "selectedIconPath": "/images/icon/选中后的tabbar/个人.png",
@@ -52,9 +44,7 @@
   "usingComponents": {
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
-    "msg-input": "Components/msg-input/msg-input",
     "van-field": "@vant/weapp/field/index",
-    "Header": "Components/Header/Header",
     "van-search": "miniprogram_npm/@vant/weapp/search/index",
     "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index"
   },

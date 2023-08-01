@@ -9,15 +9,21 @@
 <button bindtap="logIn" wx:if="{{showLogIn}}" >登录</button>
 <!--弹出框-->
 <van-popup show="{{ show }}" round closeable  position="bottom" custom-style="height: 50%;  " bind:close="onClose">
-  <form class="get_user" bindsubmit="getUserName" >
+  <form  bindsubmit="getUserName" >
+  
+  <view class="get_user">
     <button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
     <image class="avatar" src="{{avatarUrl}}"></image>
   </button>
-    <view style="width: 500rpx;">
-    <text style="display: inline  ;">请输入：</text>
-    <input label="昵称：" type="nickname" name="nickname" placeholder="请输入用户名" border="{{ false }}" input-align="left" /></view>
+  
+  
+   
+    <input label="昵称：" type="nickname" name="nickname" placeholder="请输入用户名" border="{{ false }}" input-align="left" />
+    <view style="margin-top: 30rpx;"><text style="color: gray;">（请求获得您的头像，昵称，性别，地址）</text></view>
    
     <button type="primary"  class="logIn" form-type="submit" role="button" aria-disabled="false" bindtap="onClose">登录</button>
+
+  </view>
   </form>
  
 </van-popup>
@@ -42,6 +48,7 @@
   custom-style="height: 30%"
   class="logOutPopup"
 >
+<view  >确认退出登录？</view>
 <view>
 <button type="default" bindtap="cancelLogOut" >取消</button><button type="primary" bindtap="logOut">确认</button></view>
 </van-popup>
