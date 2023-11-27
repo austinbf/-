@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/coverPage/cover",
     "pages/index/index",
     "pages/my/my",
     "pages/index/indexItem/showPriciple/show",

@@ -1,14 +1,31 @@
 .scrollView {
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:space-evenly;
-
- overflow: hidden;
+  justify-content: space-evenly;
+}
+.blank{
+  height:100rpx;
+  background-color: black;
+}
+.date{
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 60rpx;
+  
+}
+.background{
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+  filter: blur(20rpx);
 }
 .content {
  width: 45vw;
- height: 52vw;
+ height: 40vw;
 box-sizing:border-box;
 background-color: lightblue;
 color: black;
@@ -17,10 +34,18 @@ flex-direction: row;
 align-items: center; 
 justify-content: center; 
 margin-top: 10rpx;
-margin-bottom: 25rpx;
+margin-bottom: 250rpx;
 border-radius: 20px;
 font-size: 50rpx;
 box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
+align-self: flex-end;
+  
+  backdrop-filter: blur(9px);
+  border-top: 2rpx solid rgba(44,44,69,0.8);
+  border-left: 2rpx solid rgba(44,44,69,0.8);
+  border-radius: 30rpx;
+  padding: 20rpx;
+  box-shadow: 0 9px 15px 0 rgba(25,21,40,0.39),0 -9px 15px 0 rgba(25,21,40,0.39);
 
 }
 .content-hover{
@@ -35,81 +60,23 @@ box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5p
 }
 
 .content:nth-child(1){
-  background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
+
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: white;   
+  background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
 
   border-radius: 20px;
 
 }
 .content:nth-child(2){
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;           
+  border-radius: 20px;
   background-image: linear-gradient(to right, #ffb347 0%, #ffcc33  51%, #ffb347  100%);
- 
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
- 
-  border-radius: 20px;
-}
-         
- 
-
-
-.content:nth-child(3){
-  background-image: linear-gradient(to right, #76b852 0%, #8DC26F  51%, #76b852  100%);
-
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-
-  border-radius: 20px;
-}
-.content:nth-child(4){
-    background-image: linear-gradient(to right, #e76671 0%, #d48375  51%, #f35562  100%);
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-
-    border-radius: 20px;
-
-  
- 
-}
-.content:nth-child(5){
-    background-image: linear-gradient(to right, #1e3c72 0%, #2a5298  51%, #1e3c72  100%);
-   
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-
-    border-radius: 20px;
-    
- 
-}
-.content:nth-child(6){
-          
-    background-image: linear-gradient(to right, #cb2d3e 0%, #d33c31  51%, #e01428  100%);
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-
-    border-radius: 20px;
-  
-
- 
-  
- 
 }
