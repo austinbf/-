@@ -36,15 +36,13 @@ Page({
       "iconPath":"/images/icon/敬请期待.png",
       "pagePath":"/pages/my/settingsPages/future/future"
     },
-      // {"text":'退出登录',
-      // "iconPath":"/images/icon/退出登录.png",
-      // "pagePath":"./indexItem/deleteMsg/deleteMsg",}
+     
     ]
         },
 
  
   jumpTo(e){
-    var id = e.currentTarget.dataset.id;
+    var id =e.currentTarget.dataset.id;
     wx.navigateTo({
      url: this.data.settings[id].pagePath,
    })

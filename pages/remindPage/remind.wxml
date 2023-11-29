@@ -1,0 +1,7 @@
+<view class="sum">您有{{num}}个预约在进程中</view>
+<van-steps
+  steps="{{ steps }}"
+  active="{{ active }}"
+  direction="vertical"
+  active-color="#3B96DC"
+/>

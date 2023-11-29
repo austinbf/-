@@ -8,8 +8,55 @@ Page({
   data: {
     noteTitle: '',
     noteContent: '',
-    date:''
+    date:'',
+    currentDate: new Date().getTime(),
+    minDate: new Date().getTime(),
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      }
+      if (type === 'month') {
+        return `${value}月`;
+      }
+      return value;
+    },
+    show: false,
+    formattedTime:'',
   },
+  showPopup() {
+    this.setData({ show: true });
+  },
+getRemindTime(value){
+  const date = new Date(value.timeStamp);
+      
+      // 使用 Date 对象提供的方法获取各个部分的时间值
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const hour = date.getHours();
+      const minute = date.getMinutes();
+      const second = date.getSeconds();
+
+      // 构建格式化后的时间字符串
+      const formattedTime = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+      
+      // 更新显示的时间值
+      this.formattedTime = formattedTime;
+      console.log(this.data.formattedTime);
+
+},
+cancelTimeSet(){
+  this.setData({ show: false });
+},
+confirmTimeSet() {
+    this.setData({ show: false });
+    wx.showModal({
+      title: '确认预约',
+      content: '预约已确认，系统将在前三天天向您再次确认',
+      showCancel: false,
+    });
+  },
+
   onTitleInput: function(e) {
     this.setData({
       noteTitle: e.detail.value
@@ -49,7 +96,7 @@ Page({
          noteContent: ''
        });
        console.log(this.data.noteContent)
-   
+       this.setData({ show: true });
        wx.showToast({
          title: '添加成功'
        });

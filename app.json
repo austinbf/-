@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/coverPage/cover",
+    "pages/remindPage/remind",
     "pages/index/index",
     "pages/my/my",
     "pages/index/indexItem/showPriciple/show",
@@ -35,6 +36,12 @@
         "text": "主页"
       },
       {
+        "pagePath": "pages/remindPage/remind",
+        "iconPath": "/images/icon/选中后的tabbar/3.1旺旺.png",
+        "selectedIconPath": "/images/icon/选中后的tabbar/3.1旺旺-选中.png",
+        "text": "提醒"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "selectedIconPath": "/images/icon/选中后的tabbar/个人.png",
@@ -47,7 +54,13 @@
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-field": "@vant/weapp/field/index",
     "van-search": "miniprogram_npm/@vant/weapp/search/index",
-    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index"
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
+    "van-datetime-picker":"miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell":"miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group":"miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index"
   },
   "sitemapLocation": "sitemap.json"
 }

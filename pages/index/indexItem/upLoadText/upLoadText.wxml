@@ -5,3 +5,26 @@
     <button class="add-button" bindtap="addNote">添加</button>
   </view>
   </view>
+  <van-popup
+  show="{{ show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onClose"
+>
+<view class="remindText">请设置您的提醒时间</view>
+<van-datetime-picker
+class="datetimepicker"
+  type="date"
+  value="{{ currentDate }}"
+  bind:input="onInput"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+  visible-item-count="4"
+  bind:change="getRemindTime"
+  bind:confirm="confirmTimeSet"
+  bind:cancel="cancelTimeSet"
+/>
+
+
+</van-popup>

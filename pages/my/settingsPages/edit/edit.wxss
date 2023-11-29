@@ -1,1 +1,13 @@
-/* pages/my/settingsPages/edit/edit.wxss */
+.text{
+  font-size:30px;
+  margin: 20rpx;
+  margin-left: 25rpx;
+  color: #3B96DC;
+  font-weight:800;
+}
+.title{
+  font-weight: bolder;
+  position: relative;
+  top:20%;
+  color: black;
+}

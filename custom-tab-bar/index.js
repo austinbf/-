@@ -38,21 +38,21 @@ Component({
     active:0,
     "list": [{
       "pagePath": "/pages/index/index",
-      "iconPath": "/images/icon/主页.png",
-      "selectedIconPath": "/images/icon/选中后的tabbar/主页.png",
+      "iconPath": "/images/icon/3.1首页.png",
+      "selectedIconPath": "/images/icon/选中后的tabbar/3.1首页-选中.png",
       "text": "主页"
     },
-    //  {
-    //   "pagePath": "/pages/massage/massage",
-    //   "iconPath": "/images/icon/短信.png",
-    //   "selectedIconPath": "/images/icon/选中后的tabbar/短信.png",
-    //   "text": "信息"
-    // },
+     {
+      "pagePath": "/pages/remindPage/remind",
+      "iconPath": "/images/icon/选中后的tabbar/3.1旺旺.png",
+      "selectedIconPath": "/images/icon/选中后的tabbar/3.1旺旺-选中.png",
+      "text": "提醒"
+    },
   {
     "pagePath": "/pages/my/my",
     "text": "我的",
-    "selectedIconPath": "/images/icon/选中后的tabbar/个人.png",
-    "iconPath": "/images/icon/个人.png"
+    "selectedIconPath": "/images/icon/选中后的tabbar/mine2.png",
+    "iconPath": "/images/icon/我.png"
 
   }]
   },

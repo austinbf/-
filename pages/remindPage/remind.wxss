@@ -1,0 +1,8 @@
+.datetime-picker{
+color: black;
+}
+.sum{
+  margin-top: 20rpx;
+margin-bottom: 20rpx;
+margin-left: 10rpx;
+}

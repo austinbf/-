@@ -15,8 +15,17 @@
   display: flex;
 }
  */
- 
- .container {
+ .datetimepicker{
+ position: relative;
+ top:30%;
+ }
+ .remindText
+{
+  position: relative;
+ top:20%;
+ left:80%;
+ transform: translate(-50%, -50%);
+} .container {
   padding: 20rpx;
 }
 .form-group {
@@ -45,8 +54,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60rpx;
-  background-color:  #f8cf00 ;
+  height: 100rpx;
+  background-color: #3B96DC ;
   color: #fff;
   font-size: 28rpx;
   border: none;

@@ -1,7 +1,40 @@
+.tmp{
+  background-color:#3B96DC ;
+  height:100rpx;  
+}
+.text{
+  font-size:30px;
+  margin: 20rpx;
+  margin-left: 25rpx;
+  
+  color: #3B96DC;
+  font-weight:800;
+}
+.custom-swipe-cell {
+  height: 70px; /* 自定义高度，可以根据需要进行调整 */
 
+}
+
+.van-swipe-cell__right{
+  background-color: red;
+  height: inherit;
+  width: 65px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.van-swipe-cell__left{
+  background-color: #42C05C;
+  height: inherit;
+  width: 65px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .label{
     box-sizing: border-box;
-  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,22 +43,25 @@
     height:130rpx;
     padding: 40rpx;
     margin:10rpx;
-    color: #f7f8fa;
     font-weight: 500;
-    background-image: linear-gradient(140deg, #f7bd00c2 0%, #f9c532 100%);
+    background-color:#3B96DC;
     border-radius: 30px;
 }
 .msg{
-  width: 740rpx;
-  height:50rpx;
-margin-top:-5px;
-padding-bottom: 3px;
+
 font-weight: bolder;
+position: relative;
+top:20%;
+font-size: larger;
+color: black;
+
+
 }
 .date{
-  width: 740rpx;
-  height:50rpx;
-  margin-top: -6px;
+  position: relative;
+  top:15%;
+  color: black;
+
 }
 .container1{
 margin-bottom: 20rpx;
@@ -37,7 +73,7 @@ margin-bottom: 20rpx;
   height:70rpx;
 color: black;
 font-weight: bolder;
-background-color: #e4e3e8;
+background-color: #3B96DC;
   border-radius: 30rpx;
   
 }

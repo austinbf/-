@@ -1,2 +1,65 @@
-<!--pages/my/settingsPages/edit/edit.wxml-->
-<text>编辑常用</text>
+<view class="text">编辑</view>
+<van-cell title="联系人1" title-class="title" ></van-cell>
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="姓名"
+    icon="question-o"
+    placeholder="请输入用户名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="电话"
+    placeholder="请输入电话"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group>
+<van-cell title="联系人2" title-class="title"></van-cell>
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="姓名"
+    icon="question-o"
+    placeholder="请输入用户名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="电话"
+    placeholder="请输入电话"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group>
+
+<van-cell title="联系人3" title-class="title"></van-cell>
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="姓名"
+    icon="question-o"
+    placeholder="请输入用户名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="电话"
+    placeholder="请输入电话"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group>
