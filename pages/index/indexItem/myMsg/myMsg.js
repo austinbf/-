@@ -8,7 +8,22 @@ Page({
   data: {
     myMsgDataObj:'',
   },
+  onClose(event) {
+    wx.showModal({
+      title: '确认删除',
+      content: '是否确认删除该条记录？',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../../../coverPage/cover?confirmDelete=false',
+          })
+        }
+      }
+    })
+  },
 showData(){
+
+
 console.log(this.data.myMsgDataObj);
 },
   /**

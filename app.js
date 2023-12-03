@@ -10,6 +10,6 @@ App({
       "nickName":'',
       "avatarUrl":''
 
-    }
+    },
   }
 })

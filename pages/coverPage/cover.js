@@ -6,25 +6,33 @@ Page({
    */
   data: {
 pass:'no',
-password:""
+password:"",
+show:true,
+deleteConfirm:''
   },
+  
+
+ 
   onPasswordChange(e) {
     this.setData({
       password: e.detail.value,
     });
   },
   onSubmit() {
-   
     // 进行验证逻辑，验证成功后跳转
     if (this.data.password == "password") {
       this.setData({
         pass: "yes"
       })
+
       wx.switchTab({
         url: '/pages/index/index',
       });
     } else {
-      console.log('输入错误');
+      wx.showToast({
+        title: '输入错误',
+        icon:'error'
+      })
     }
   },
   /**

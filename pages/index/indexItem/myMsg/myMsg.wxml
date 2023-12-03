@@ -6,7 +6,7 @@
   <van-cell-group >
     <van-cell title="周日参加一个聚会" value="2023-11-29"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
   </van-cell-group>
-  <view slot="right" class="van-swipe-cell__right">删除</view>
+  <view slot="right" class="van-swipe-cell__right" bindtap="onClose">删除</view>
 </van-swipe-cell>
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" >
   <view slot="left" class="van-swipe-cell__left">置顶</view>
