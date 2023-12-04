@@ -1,3 +1,3 @@
 <!--pages/my/settingsPages/zhaomu/zhaomu.wxml-->
 <button bindtap="getData" type="primary">点击我获得数据</button>
-<view>{{dataObj[0].items[0].iconPath}}</view>
+<button bindtap="postData" type="warn">点击我上传数据</button>

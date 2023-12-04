@@ -1,4 +1,5 @@
 // pages/my/settingsPages/zhaomu/zhaomu.js
+const{request}=require("../../../../utils/request")
 const db = wx.cloud.database()
 const app=getApp()
 Page({
@@ -10,17 +11,36 @@ Page({
 dataObj:''
   },
 getData(){
-// db.collection('information').get({
-//   success:res=>{
-//     console.log(res);
-//     this.setData({
-//       dataObj:res.data
-//     })
-//   }
-// })
-
-  app.globalData.userInfo.nickName="1111"
-  console.log(app.globalData.userInfo)
+wx.request({
+  url: 'http://localhost:9090/user/login',
+  method:"POST",
+  data:{
+    "username":"root",
+    "password":"123456"
+  },
+  success:(res)=>{
+    console.log(res);
+  }
+})
+},
+postData(){
+// 调用 request 函数
+request({
+    url: '/register',
+    method: 'POST',
+    data: {
+      username: 'four123123',
+      password: '123123'
+    }
+})
+  .then(response => {
+    // 请求成功的处理逻辑
+    console.log('请求成功', response);
+  })
+  .catch(error => {
+    // 请求失败的处理逻辑
+    console.error('请求失败', error);
+  });
 },
   /**
    * 生命周期函数--监听页面加载
