@@ -1,0 +1,76 @@
+.text1{
+  font-size:30px;
+position: absolute;
+top:10%;
+left: 12%;
+}
+.container1{
+ border: 0.5px solid gray;
+ width: 80%;
+ height:50%;
+ position: absolute;
+ top:17%;
+ left:10%;
+ border-radius: 20px;
+
+  
+}
+.register{
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  width: 80%;
+  height:130rpx;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
+  padding: 0;
+ background-color: white;
+display: flex;
+align-items: center;
+padding-left: 20rpx;
+border-radius: 20px;
+margin-bottom: 20rpx;
+margin-top: 40rpx;
+}
+.box{
+  position: absolute;
+  bottom: 0; /* 将盒子放置在底部 */
+  width: 100%; /* 设置盒子的宽度 */
+  height: 30%; /* 设置盒子的高度 */
+}
+.title1{
+  margin: 20rpx;
+  margin-left: 30rpx;
+  font-size:16px;
+  margin-top: 50rpx;
+}
+.title2{
+
+  margin: 20rpx;
+  margin-left: 30rpx;
+  font-size:16px;
+  margin-top: 50rpx;
+}
+
+.input{
+  margin-top: 40rpx;
+  height: 100rpx;
+}
+.input1{
+  margin-top: 20rpx;
+  height: 100rpx;
+}
+.input input{
+  margin-left: 30rpx;
+  font-size: larger;
+
+}
+.input1 input{
+  margin-left: 30rpx;
+  font-size: larger;
+}
+.footer{
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

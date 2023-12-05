@@ -1,0 +1,34 @@
+.container{
+  height:1000rpx;
+background-color: blue;
+}
+.box{
+  position: absolute;
+  bottom: 0; /* 将盒子放置在底部 */
+  width: 100%; /* 设置盒子的宽度 */
+  height: 30%; /* 设置盒子的高度 */
+}
+.login{
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  width: 80%;
+  height:130rpx;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
+  padding: 0;
+ background-color: white;
+display: flex;
+align-items: center;
+padding-left: 20rpx;
+border-radius: 20px;
+margin-bottom: 20rpx;
+margin-top: 40rpx;
+}
+.register
+{
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

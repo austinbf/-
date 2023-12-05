@@ -1,0 +1,9 @@
+<view class="container">
+<view class="box">
+<button bindtap="login" class="login">登录</button>
+<view class="register">
+<text>还没有账号？</text>
+<text bindtap="register" style="color: #65A6FE; margin-left: 20rpx;">创建</text>
+</view>
+</view>
+</view>

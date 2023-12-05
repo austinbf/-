@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/loginAndregister/loginAndRegister",
     "pages/coverPage/cover",
     "pages/remindPage/remind",
     "pages/index/index",
@@ -14,7 +15,8 @@
     "pages/my/settingsPages/edit/edit",
     "pages/my/settingsPages/emergency/emergency",
     "pages/my/settingsPages/aboutUs/aboutUs",
-    "pages/my/settingsPages/future/future"
+    "pages/my/settingsPages/future/future",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,7 +24,7 @@
     "navigationBarTitleText": "时刻为你",
     "navigationBarTextStyle": "black",
     "initialRenderingCache": "static",
-   "enablePullDownRefersh":"true"
+    "enablePullDownRefersh": "true"
   },
   "tabBar": {
     "custom": true,
@@ -57,12 +59,11 @@
     "van-field": "@vant/weapp/field/index",
     "van-search": "miniprogram_npm/@vant/weapp/search/index",
     "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
-    "van-datetime-picker":"miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-datetime-picker": "miniprogram_npm/@vant/weapp/datetime-picker/index",
     "van-steps": "@vant/weapp/steps/index",
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
-    "van-cell":"miniprogram_npm/@vant/weapp/cell/index",
-    "van-cell-group":"miniprogram_npm/@vant/weapp/cell-group/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-cell": "miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "miniprogram_npm/@vant/weapp/cell-group/index"
   },
   "sitemapLocation": "sitemap.json"
 }

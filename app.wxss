@@ -11,7 +11,14 @@
   border: none;
  /* background-color: #f6f6f6; */
 } 
-
+.text{
+  font-size:30px;
+  margin: 20rpx;
+  margin-left: 25rpx;
+  
+  color: #3B96DC;
+  font-weight:800;
+}
 page{
   /* background-color: #f7f7f7; */
   letter-spacing: 2px;
