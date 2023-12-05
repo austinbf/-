@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/loginAndregister/loginAndRegister",
+    "pages/index/index",
     "pages/coverPage/cover",
     "pages/remindPage/remind",
-    "pages/index/index",
     "pages/my/my",
     "pages/index/indexItem/showPriciple/show",
     "pages/index/indexItem/myMsg/myMsg",

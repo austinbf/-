@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    checkboxValue: false,
+    checkboxValue: true,
     loginName: '', // 登录名
     loginPassword: '', // 登录密码
     registerName: '', // 注册用户名
@@ -44,13 +44,10 @@ Page({
         wx.showToast({
           title: '登录成功',
           icon:'none'
-        })
-        
-          wx.navigateTo({
-            url: 'pages/index/index',
-          });
-      
-        
+        })        
+          wx.switchTab({
+            url: '/pages/index/index',
+          });      
       })
       .catch(error => {
         console.log('请求失败', error);
@@ -74,13 +71,7 @@ Page({
         wx.showToast({
           title: '注册成功',
           icon:'none'
-        })
-        setTimeout(function() {
-          wx.navigateTo({
-            url: '/pages/index/index',
-          });
-        }, 2000);
-        
+        })        
       })
       .catch(error => {
         console.log('请求失败', error);
