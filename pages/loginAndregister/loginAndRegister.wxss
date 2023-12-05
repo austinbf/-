@@ -1,34 +1,111 @@
-.container{
-  height:1000rpx;
-background-color: blue;
+page{
+  height: 100%;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
 }
-.box{
+/* 顶部背景 */
+.top-box{
+  height: 30%;
+  background-image: linear-gradient( #3B96DC,#5ed6fd);
+  padding: 30rpx;
+  color: white;
+  font-weight: bold;
+}
+.next-text{
+  margin-top: 15rpx;
+}
+/* 内容 */
+.center-box{
+  background-color: white;
+  margin: -20% 20rpx 0rpx 20rpx;
+  padding: 25rpx;
+  border-radius: 15rpx;
+  -webkit-filter: drop-shadow(0 0 8rpx #3B96DC);
+  filter: drop-shadow(0 0 8rpx #3B96DC);
+}
+/* 导航 */
+.nav{
+  display: flex;
+  text-align: center;
+  font-size: 32rpx;
+  margin-bottom: 8%;
+}
+.left{
+  flex: 1;
+  font-weight: bold;
+}
+.right{
+  flex: 1;
+  font-weight: bold;
+}
+.select{
+  font-weight: bold;
+  color: #3B96DC;
+}
+.select text{
+  padding-bottom: 5rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  border-bottom: 5rpx solid #3B96DC;
+}
+.wei-input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.input-box{
+  margin: 20rpx;
+}
+.input{
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}
+.input-code{
   position: absolute;
-  bottom: 0; /* 将盒子放置在底部 */
-  width: 100%; /* 设置盒子的宽度 */
-  height: 30%; /* 设置盒子的高度 */
+  right: 40rpx;
+  font-size: 26rpx;
+  padding: 10rpx 15rpx;
+  color: white;
+  background-color: #FF8C69;
+  border-radius: 10rpx;
 }
-.login{
-  justify-content: center;
-  flex-wrap: wrap;
+.forget{
+  font-size: 26rpx;
+  color: #33ccff;
   margin-top: 20rpx;
-  width: 80%;
-  height:130rpx;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 5px;
-  padding: 0;
- background-color: white;
-display: flex;
-align-items: center;
-padding-left: 20rpx;
-border-radius: 20px;
-margin-bottom: 20rpx;
-margin-top: 40rpx;
+  text-align: right;
 }
-.register
-{
-  margin-top: 100rpx;
+.sumbit-btn{
+  margin: 6% 30rpx 30rpx 30rpx;
+}
+/* 重影 */
+.shadow{
+  box-shadow: 0rpx 0rpx 10rpx 0rpx #3B96DC;
+  border-radius: 25rpx;
+  background-color: white;
+}
+.shadow-1{
+  height: 40rpx;
+  margin: -20rpx 50rpx 0 50rpx;
+}
+.shadow-2{
+  position: relative;
+  z-index: -888;
+  height: 50rpx;
+  margin: -30rpx 80rpx 0 80rpx;
+}
+/* 最底部 */
+.bottom-box{
+  position:fixed; 
+  bottom: 100rpx;
+  width:100%;
+  font-size: 24rpx;
+  color: gray;
   display: flex;
   justify-content: center;
-  align-items: center;
-
 }
+
