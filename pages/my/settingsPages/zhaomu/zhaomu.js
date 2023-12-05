@@ -11,17 +11,8 @@ Page({
 dataObj:''
   },
 getData(){
-wx.request({
-  url: 'http://localhost:9090/user/login',
-  method:"POST",
-  data:{
-    "username":"root",
-    "password":"123456"
-  },
-  success:(res)=>{
-    console.log(res);
-  }
-})
+ let token= wx.getStorageSync('token');
+console.log(token);
 },
 postData(){
 // 调用 request 函数

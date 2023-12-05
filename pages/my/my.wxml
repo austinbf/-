@@ -6,7 +6,7 @@
   </view>
 </view>
 
-<button bindtap="logIn" wx:if="{{showLogIn}}" >登录</button>
+<button bindtap="logIn" >编辑个人信息</button>
 <!--弹出框-->
 <van-popup show="{{ show }}" round closeable  position="bottom" custom-style="height: 50%;  " bind:close="onClose">
   <form  bindsubmit="getUserName" >

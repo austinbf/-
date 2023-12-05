@@ -36,11 +36,13 @@ Page({
   submitLogin(e) {
     const { loginName, loginPassword } = this.data;
     if(this.data.checkboxValue){
-      post('/login',{
+      post('/user/login',{
         username:loginName,
         password:loginPassword 
-      }).then(data => {
-        console.log('请求成功', data);
+      }).then(res => {
+        console.log('请求成功', res);
+        wx.setStorageSync('token',res.data.token);
+        
         wx.showToast({
           title: '登录成功',
           icon:'none'
@@ -61,11 +63,12 @@ Page({
     }
   },
   submitRegister(e){
-    const{ registerName,registerPassword, confirmPassword}=this.data;
+    const{ registerName,registerPassword, confirmPassword,registerPhone}=this.data;
     if(registerPassword==confirmPassword&&this.data.checkboxValue){
-      post('/register',{
+      post('/user/register',{
         username:registerName,
-        password:registerPassword
+        password:registerPassword,
+        phone:registerPhone
       }).then(data => {
         console.log('请求成功', data);
         wx.showToast({

@@ -1,5 +1,5 @@
 
-const baseUrl = 'http://localhost:9090/user';
+const baseUrl = 'http://localhost:9090';
 const request = (url, method, data, header = {}) => {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -8,7 +8,7 @@ const request = (url, method, data, header = {}) => {
       data: data,
       headers: {
         'Content-Type': 'application/json', // 设置请求的 header
-        ...header,
+        'token':wx.getStorageSync('token')
       },
       success(res) {
         const { statusCode, data } = res;
@@ -34,3 +34,13 @@ module.exports = {
   post: (url, data, header) => request(url, 'POST', data, header),
   // ...可以根据需要封装更多的方法如put, delete等
 };
+//实例
+// post('/register',{
+//   username:'five123',
+//   password:'123123'
+// }).then(data => {
+//   console.log('请求成功', data);
+// })
+// .catch(error => {
+//   console.log('请求失败', error);
+// });

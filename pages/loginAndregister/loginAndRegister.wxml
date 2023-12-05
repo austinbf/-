@@ -32,6 +32,11 @@
       <icon type="waiting" color="#44ADFB" size="16"></icon>
       <input class="input" auto-focus placeholder="请输入用户名" bindinput="inputChange" data-field="registerName"/>
     </view>
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" auto-focus placeholder="请输入电话号码" bindinput="inputChange" data-field="registerPhone"/>
+    </view>
+    
     <!-- <view class="wei-input">
       <icon type="waiting" color="#44ADFB" size="16"></icon>
       <input class="input" auto-focus placeholder="请输入6位验证码"/>
