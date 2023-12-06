@@ -32,6 +32,7 @@ const request = (url, method, data, header = {}) => {
 module.exports = {
   get: (url, data, header) => request(url, 'GET', data, header),
   post: (url, data, header) => request(url, 'POST', data, header),
+  deleteRequest: (url, data, header) => request(url, 'DELETE', data, header),
   // ...可以根据需要封装更多的方法如put, delete等
 };
 //实例

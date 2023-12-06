@@ -1,50 +1,20 @@
 
 <van-search value="{{ value }}" placeholder="搜索" />
 <view class="text">信息</view>
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" >
+<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}"  wx:for="{{myMsgDataObj}}" wx:key="index">
+  <view slot="left" class="van-swipe-cell__left">置顶</view>
+  <van-cell-group  >
+ 
+    <van-cell  title="{{item.title}}" value="{{item.createTime}}"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
+  </van-cell-group>
+  <view slot="right" class="van-swipe-cell__right" bindtap="onClose" data-id="{{item.id}}">删除</view>
+</van-swipe-cell>
+<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
   <view slot="left" class="van-swipe-cell__left">置顶</view>
   <van-cell-group >
-    <van-cell title="周日参加一个聚会" value="2023-11-29"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
+    <van-cell title="今天要去参加一个聚会" value="2023-11-29"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
   </van-cell-group>
   <view slot="right" class="van-swipe-cell__right" bindtap="onClose">删除</view>
 </van-swipe-cell>
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" >
-  <view slot="left" class="van-swipe-cell__left">置顶</view>
-  <van-cell-group >
-    <van-cell title="无标题" value="2023-11-29"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
-  </van-cell-group>
-  <view slot="right" class="van-swipe-cell__right">删除</view>
-</van-swipe-cell>
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" >
-  <view slot="left" class="van-swipe-cell__left">置顶</view>
-  <van-cell-group >
-    <van-cell title="我的银行卡密码是" value="2023-11-29"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"   />
-  </van-cell-group>
-  <view slot="right" class="van-swipe-cell__right">删除</view>
-</van-swipe-cell>
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" >
-  <view slot="left" class="van-swipe-cell__left">置顶</view>
-  <van-cell-group >
-    <van-cell title="我的保险柜密码是" value="2020-1-2"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"   />
-  </van-cell-group>
-  <view slot="right" class="van-swipe-cell__right">删除</view>
-</van-swipe-cell>
-
-  
-
-
-<!--not tmp 下面的接了接口还用呢-->
-<!-- <view class="msg-search">
-</view>
-<view class="container" class="container1" wx:for="{{myMsgDataObj}}" wx:key="index">
-  <view class="label">
- <view class="msg">{{myMsgDataObj[index].noteTitle}}</view>
-<view class="date">{{myMsgDataObj[index].date}}</view>
-
-</view>
-</view> -->
-<!-- <button bindtap="showData">监看data数据</button> -->
-<!-- <view class="noMassage" wx:if="{{myMsgDataObj==''}}"> <text>暂无信息</text></view> -->
-<!-- <image class="addMassage" src="/images/icon/加号 (1).png"/> -->
 <tabbar></tabbar>
 

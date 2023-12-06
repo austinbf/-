@@ -1,4 +1,5 @@
 // pages/coverPage/cover.js
+const{deleteRequest}=require('../../utils/request');
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
 pass:'no',
 password:"",
 show:true,
-deleteConfirm:''
+deleteConfirm:'',
+eventId:''
   },
   
 
@@ -25,7 +27,22 @@ deleteConfirm:''
       this.setData({
         pass: "yes"
       })
-
+      const {eventId}=this.data;
+      if(eventId){
+        deleteRequest('/event/delete/'+eventId,{},{}).then(res=>{
+          console.log('请求成功',res.data);
+          this.setData({
+            eventId:''
+          })
+          wx.showToast({
+            title: '删除成功',
+            icon:'none'
+          })
+        })
+        .catch(error => {
+          console.log('请求失败', error);
+        });
+      }
       wx.redirectTo({
         url: '/pages/index/indexItem/myMsg/myMsg',
       });
@@ -40,7 +57,11 @@ deleteConfirm:''
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+let eventId=options.eventId;
+console.log(eventId);
+this.setData({
+  eventId:eventId
+})
   },
 
   /**

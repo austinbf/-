@@ -8,14 +8,18 @@ Page({
   data: {
     myMsgDataObj:'',
   },
-  onClose(event) {
+  getId(e){
+    console.log(e);
+  },
+  onClose(e) {
+    let eventId=e.currentTarget.dataset.id;
     wx.showModal({
       title: '确认删除',
       content: '是否确认删除该条记录？',
       success(res) {
         if (res.confirm) {
-          wx.navigateTo({
-            url: '../../../coverPage/cover?confirmDelete=false',
+          wx.redirectTo({
+            url: '../../../coverPage/cover?eventId='+eventId
           })
         }
       }
@@ -31,8 +35,16 @@ console.log(this.data.myMsgDataObj);
    */
   onLoad(options) {
     let id=wx.getStorageSync('id');
-get('/event/get/'+id,{},{}).then(res => {
+get('/event/users/'+id,{},{}).then(res => {
   console.log('请求成功', res);
+  res.data.forEach((item) => {
+    const createDate = new Date(item.createTime);
+    const formattedDate = createDate.toLocaleDateString();
+    item.createTime = formattedDate;
+  });
+  this.setData({
+    myMsgDataObj:res.data
+  })
 })
 .catch(error => {
   console.log('请求失败', error);
