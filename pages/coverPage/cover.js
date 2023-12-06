@@ -19,14 +19,15 @@ deleteConfirm:''
     });
   },
   onSubmit() {
+    let password1=wx.getStorageSync('password');
     // 进行验证逻辑，验证成功后跳转
-    if (this.data.password == "password") {
+    if (this.data.password == password1) {
       this.setData({
         pass: "yes"
       })
 
-      wx.switchTab({
-        url: '/pages/index/index',
+      wx.redirectTo({
+        url: '/pages/index/indexItem/myMsg/myMsg',
       });
     } else {
       wx.showToast({

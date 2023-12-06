@@ -5,5 +5,5 @@
 <view class="text">请认证信息</view>
 <view class="confirm">
 <input   bindinput="onPasswordChange"  type="password" placeholder="请输入密码" name="password"></input>
-<button bindtap="onSubmit">登录</button>
+<button bindtap="onSubmit">认证</button>
 </view>

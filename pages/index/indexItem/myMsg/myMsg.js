@@ -30,7 +30,13 @@ console.log(this.data.myMsgDataObj);
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let id=wx.getStorageSync('id');
+get('/event/get/'+id,{},{}).then(res => {
+  console.log('请求成功', res);
+})
+.catch(error => {
+  console.log('请求失败', error);
+});
   },
 
   /**

@@ -2,7 +2,7 @@
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 const app=getApp(); 
 const token=wx.getStorageSync('token');
-
+const  username=wx.getStorageSync('username');
 Page({
 
   /**
@@ -81,16 +81,22 @@ Page({
      }
   },
   logIn() {
-    this.setData({ show: true });
-  let db=wx.cloud.database();
-    console.log(this.data.show);
+    if(!token){
+      this.setData({ show: true });
+    }
+    
   },
 logOut(){
+  
 this.setData({
   avatarUrl:defaultAvatarUrl,
   nickName:'',
   show1:false,
   showLogIn:true
+})
+wx.setStorageSync('token', '');
+wx.navigateTo({
+  url: '/pages/loginAndregister/loginAndRegister',
 })
 },
 cancelLogOut(){
@@ -113,16 +119,19 @@ showPopup(){
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+   
     wx.onThemeChange((result) => {
       this.setData({
         theme: result.theme
       })
     })
-  if(token){
+ 
     this.setData({
-      showLogIn:false
+      showLogIn:false,
+      nickName:username
+      
     })
-  }
+  
 
   },
 
