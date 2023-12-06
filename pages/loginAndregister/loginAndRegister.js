@@ -42,6 +42,9 @@ Page({
       }).then(res => {
         console.log('请求成功', res);
         wx.setStorageSync('token',res.data.token);
+        wx.setStorageSync('id',res.data.id);
+        wx.setStorageSync('username', res.data.username);
+        wx.setStorageSync('password',res.data.password);
         
         wx.showToast({
           title: '登录成功',

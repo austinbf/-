@@ -13,6 +13,8 @@ dataObj:''
 getData(){
  let token= wx.getStorageSync('token');
 console.log(token);
+let id= wx.getStorageSync('id');
+console.log(id);
 },
 postData(){
 // 调用 request 函数

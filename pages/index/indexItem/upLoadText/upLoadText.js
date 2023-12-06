@@ -1,5 +1,6 @@
 // pages/index/indexItem/upLoadText/upLoadText.js
 const db = wx.cloud.database()
+const {post} =require('../../../../utils/request')
 Page({
 
   /**
@@ -70,7 +71,7 @@ confirmTimeSet() {
   },
 
   addNote: function() {
-    const { noteTitle, noteContent } = this.data;
+    const { noteTitle, noteContent ,date} = this.data;
     this.setData({
       "date":new Date(Date.parse(new Date())+ 60*60*1000*8).toISOString().substring(0,10)
     })
@@ -82,14 +83,23 @@ confirmTimeSet() {
       return;   
     }
     else{
-      db.collection('textData').add({
-        "data":{
-          "noteTitle":this.data.noteTitle,
-          "noteContent":this.data.noteContent,
-         "date":this.data.date
-        }
-      });
-      console.log(this.data.noteContent)
+      let id= wx.getStorageSync('id');
+      let username=wx.getStorageSync('username');
+      post('/event/add/'+id,{
+        title:noteTitle,
+        name:username,
+        creatTime:date,
+        content:noteContent,
+        lng:"123",
+        lat:"123",
+        userId:id
+       },{}).then(data => {
+         console.log('请求成功', data);
+       })
+       .catch(error => {
+         console.log('请求失败', error);
+       });
+      
        // 添加成功后，清空输入框
        this.setData({
          noteTitle: '',

@@ -6,7 +6,7 @@ const request = (url, method, data, header = {}) => {
       url: baseUrl + url, // 拼接完整的url
       method: method,
       data: data,
-      headers: {
+      header: {
         'Content-Type': 'application/json', // 设置请求的 header
         'token':wx.getStorageSync('token')
       },
@@ -38,8 +38,8 @@ module.exports = {
 // post('/register',{
 //   username:'five123',
 //   password:'123123'
-// }).then(data => {
-//   console.log('请求成功', data);
+// },{}//token).then(res => {
+//   console.log('请求成功', res);
 // })
 // .catch(error => {
 //   console.log('请求失败', error);

@@ -1,5 +1,5 @@
 // pages/index/indexItem/myMsg/myMsg.js
-const db = wx.cloud.database();
+const { get, post } = require('../../../../utils/request');
 Page({
 
   /**
@@ -30,15 +30,7 @@ console.log(this.data.myMsgDataObj);
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-db.collection('textData').get({
-  success:res=>{
-    
-    this.setData({
-      myMsgDataObj:res.data
-    })
-    console.log(myMsgDataObj);
-  }
-})
+
   },
 
   /**
