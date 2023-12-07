@@ -10,7 +10,9 @@ pass:'no',
 password:"",
 show:true,
 deleteConfirm:'',
-eventId:''
+eventId:'',
+deleteMsg:false,
+checkMsg:false
   },
   
 
@@ -27,25 +29,35 @@ eventId:''
       this.setData({
         pass: "yes"
       })
-      const {eventId}=this.data;
-      if(eventId){
+      console.log(this.data);
+      const {eventId,deleteMsg,checkMsg}=this.data;
+      if(checkMsg){
+        wx.redirectTo({
+          url:'/pages/index/indexItem/upLoadText/upLoadText?eventId='+eventId
+        })
+       this.setData({
+         checkMsg:false
+       })
+      }
+      else if(deleteMsg){
         deleteRequest('/event/delete/'+eventId,{},{}).then(res=>{
           console.log('请求成功',res.data);
           this.setData({
-            eventId:''
+            eventId:'',
+            deleteMsg:false
           })
           wx.showToast({
             title: '删除成功',
             icon:'none'
           })
+          wx.redirectTo({
+            url: '/pages/index/indexItem/myMsg/myMsg',
+          });
         })
         .catch(error => {
           console.log('请求失败', error);
         });
       }
-      wx.redirectTo({
-        url: '/pages/index/indexItem/myMsg/myMsg',
-      });
     } else {
       wx.showToast({
         title: '输入错误',
@@ -58,9 +70,13 @@ eventId:''
    */
   onLoad(options) {
 let eventId=options.eventId;
-console.log(eventId);
+let deleteMsg=options.deleteMsg;
+let checkMsg=options.checkMsg;
+console.log(options);
 this.setData({
-  eventId:eventId
+  eventId:eventId,
+  deleteMsg:deleteMsg,
+  checkMsg:checkMsg
 })
   },
 

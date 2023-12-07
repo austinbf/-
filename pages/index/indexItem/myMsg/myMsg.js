@@ -10,8 +10,9 @@ Page({
   },
   fullMsg(e){
     let eventId=e.currentTarget.dataset.id;
-wx.navigateTo({
-  url: '/pages/index/indexItem/upLoadText/upLoadText?eventId=' +eventId
+
+wx.redirectTo({
+  url: '/pages/coverPage/cover?eventId='+eventId+'&checkMsg=true',
 })
   },
   getId(e){
@@ -25,7 +26,7 @@ wx.navigateTo({
       success(res) {
         if (res.confirm) {
           wx.redirectTo({
-            url: '../../../coverPage/cover?eventId='+eventId
+            url: '../../../coverPage/cover?eventId='+eventId+'&deleteMsg=true'
           })
         }
       }
