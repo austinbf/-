@@ -13,7 +13,7 @@ deleteConfirm:'',
 eventId:'',
 deleteMsg:false,
 checkMsg:false,
-selectedIds:[]
+batchDelete:''
   },
   
 
@@ -31,7 +31,7 @@ selectedIds:[]
         pass: "yes"
       })
       console.log(this.data);
-      const {eventId,deleteMsg,checkMsg,selectedIds}=this.data;
+      const {eventId,deleteMsg,checkMsg,batchDelete}=this.data;
       if(checkMsg){
         wx.redirectTo({
           url:'/pages/index/indexItem/upLoadText/upLoadText?eventId='+eventId
@@ -59,24 +59,10 @@ selectedIds:[]
           console.log('请求失败', error);
         });
       }
-      else if(selectedIds){
-        post('/event/delete/batch', selectedIds, {}).then(res => {
-      console.log('请求成功', res.data);
-      // 删除后更新数据源
-      const updatedData = this.data.myMsgDataObj.filter(item => item.checked === false);
-      this.setData({
-        myMsgDataObj: updatedData
-      });
-      wx.showToast({
-        title: '删除成功',
-        icon: 'none'
-      });
-      wx.redirectTo({
-        url: '/pages/index/indexItem/myMsg/myMsg',
-      })
-    }).catch(error => {
-      console.log('请求失败', error);
-    });
+      else if(batchDelete){
+        wx.redirectTo({
+          url: '/pages/index/indexItem/myMsg/myMsg?batchDelete='+true,
+        })
       }
     } else {
       wx.showToast({
@@ -92,14 +78,13 @@ selectedIds:[]
 let eventId=options.eventId;
 let deleteMsg=options.deleteMsg;
 let checkMsg=options.checkMsg;
-const jsonString = decodeURIComponent(options.selectedIds);
-  const selectedIds = JSON.parse(jsonString);
+let batchDelete=options.batchDelete;
 console.log(options);
 this.setData({
   eventId:eventId,
   deleteMsg:deleteMsg,
   checkMsg:checkMsg,
-  selectedIds:selectedIds
+  batchDelete:true
 })
   },
 
