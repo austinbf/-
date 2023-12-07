@@ -81,9 +81,9 @@ Page({
      }
   },
   logIn() {
-    if(!token){
+   
       this.setData({ show: true });
-    }
+    
     
   },
 logOut(){

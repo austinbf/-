@@ -1,7 +1,7 @@
 <view class="container">
   <view class="form-group">
-    <input type="text" class="note-title" placeholder="标题" bindinput="onTitleInput"  />
-    <textarea class="note-content" placeholder="内容" bindinput="onContentInput" maxlength="-1"></textarea>
+    <input type="text" class="note-title" placeholder="标题" bindinput="onTitleInput" value="{{noteTitle}}" />
+    <textarea class="note-content" placeholder="内容" bindinput="onContentInput"   value="{{noteContent}}" maxlength="-1"></textarea>
     <button class="add-button" bindtap="addNote">添加</button>
   </view>
   </view>

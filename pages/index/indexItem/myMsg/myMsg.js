@@ -8,6 +8,12 @@ Page({
   data: {
     myMsgDataObj:'',
   },
+  fullMsg(e){
+    let eventId=e.currentTarget.dataset.id;
+wx.navigateTo({
+  url: '/pages/index/indexItem/upLoadText/upLoadText?eventId=' +eventId
+})
+  },
   getId(e){
     console.log(e);
   },

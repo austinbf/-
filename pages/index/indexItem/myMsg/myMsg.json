@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "van-share-sheet": "@vant/weapp/share-sheet/index"
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
   }
 }

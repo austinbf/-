@@ -1,6 +1,6 @@
 // pages/index/indexItem/upLoadText/upLoadText.js
 const db = wx.cloud.database()
-const {post} =require('../../../../utils/request')
+const {post,get} =require('../../../../utils/request')
 Page({
 
   /**
@@ -51,11 +51,15 @@ cancelTimeSet(){
 },
 confirmTimeSet() {
     this.setData({ show: false });
+    wx.switchTab({
+      url: '/pages/index/index',
+    });  
     wx.showModal({
       title: '确认预约',
       content: '预约已确认，系统将在前三天天向您再次确认',
       showCancel: false,
     });
+   
   },
 
   onTitleInput: function(e) {
@@ -117,7 +121,20 @@ confirmTimeSet() {
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    if(options.eventId){
+      let eventId=options.eventId;
+      get('/event/get/'+eventId,{},{}).then(res => {
+        console.log('请求成功', res);
+        eventId='';
+        this.setData({
+          noteTitle:res.data.title,
+          noteContent:res.data.content
+        })
+      })
+      .catch(error => {
+        console.log('请求失败', error);
+      });
+    }
   },
 
   /**

@@ -4,9 +4,8 @@
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}"  wx:for="{{myMsgDataObj}}" wx:key="index">
   <view slot="left" class="van-swipe-cell__left">置顶</view>
   <van-cell-group  >
- 
-    <van-cell  title="{{item.title}}" value="{{item.createTime}}"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
-  </van-cell-group>
+    <van-cell   bindtap="fullMsg"  title="{{item.title}}" value="{{item.createTime}}"  title-class="msg" value-class="date" custom-class="custom-swipe-cell" data-id="{{item.id}}"></van-cell> 
+  </van-cell-group> 
   <view slot="right" class="van-swipe-cell__right" bindtap="onClose" data-id="{{item.id}}">删除</view>
 </van-swipe-cell>
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
