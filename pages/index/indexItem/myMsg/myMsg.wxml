@@ -1,19 +1,25 @@
 
 <van-search value="{{ value }}" placeholder="搜索" />
-<view class="text">信息</view>
+<view class="text">信息
+<text class="delete" bindtap="batchDelete">删除</text>
+</view>
+
+
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}"  wx:for="{{myMsgDataObj}}" wx:key="index">
   <view slot="left" class="van-swipe-cell__left">置顶</view>
-  <van-cell-group  >
-    <van-cell   bindtap="fullMsg"  title="{{item.title}}" value="{{item.createTime}}"  title-class="msg" value-class="date" custom-class="custom-swipe-cell" data-id="{{item.id}}"></van-cell> 
+  <van-cell-group insert >
+  <van-cell title="单元格" label="{{item.createTime}}" bindtap="fullMsg"  title="{{item.title}}"   title-class="msg" label-class="date"  custom-class="custom-swipe-cell" data-id="{{item.id}}" >
+   <checkbox class="date"  catchtap="checkboxChange" data-checked="{{item.checked}}" checked="{{item.checked}}" data-id="{{item.id}}" ></checkbox>
+  </van-cell> 
   </van-cell-group> 
   <view slot="right" class="van-swipe-cell__right" bindtap="onClose" data-id="{{item.id}}">删除</view>
 </van-swipe-cell>
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+<!-- <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
   <view slot="left" class="van-swipe-cell__left">置顶</view>
   <van-cell-group >
     <van-cell title="今天要去参加一个聚会" value="2023-11-29"  title-class="msg" value-class="date" custom-class="custom-swipe-cell"  />
   </van-cell-group>
   <view slot="right" class="van-swipe-cell__right" bindtap="onClose">删除</view>
-</van-swipe-cell>
+</van-swipe-cell> -->
 <tabbar></tabbar>
 

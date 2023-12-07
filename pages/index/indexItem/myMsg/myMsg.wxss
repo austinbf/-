@@ -10,11 +10,22 @@
   color: #3B96DC;
   font-weight:800;
 }
+.delete{
+  color:black;
+  font-size:16px;
+  position: relative;
+  left:70%;
+  font-weight:normal;
+}
 .custom-swipe-cell {
-  height: 70px; /* 自定义高度，可以根据需要进行调整 */
+  height: 200rpx; /* 自定义高度，可以根据需要进行调整 */
 
 }
-
+.check{
+  position: relative;
+  top:30%;
+  
+}
 .van-swipe-cell__right{
   background-color: red;
   height: inherit;
@@ -52,7 +63,7 @@
 font-weight: bolder;
 position: relative;
 top:20%;
-font-size: larger;
+font-size: 20px;
 color: black;
 
 
@@ -61,7 +72,30 @@ color: black;
   position: relative;
   top:15%;
   color: black;
+  margin-right: 20rpx;
 
+}
+checkbox .wx-checkbox-input {
+	width: 34rpx;
+	height: 34rpx;
+	border-radius: 50%;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #0394F0;
+  border-color:#0394F0;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 20rpx;
+  height: 20rpx;  
+  line-height: 20rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
 }
 .container1{
 margin-bottom: 20rpx;

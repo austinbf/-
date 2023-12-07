@@ -1,5 +1,5 @@
 // pages/coverPage/cover.js
-const{deleteRequest}=require('../../utils/request');
+const{deleteRequest,post}=require('../../utils/request');
 Page({
 
   /**
@@ -12,7 +12,8 @@ show:true,
 deleteConfirm:'',
 eventId:'',
 deleteMsg:false,
-checkMsg:false
+checkMsg:false,
+selectedIds:[]
   },
   
 
@@ -30,7 +31,7 @@ checkMsg:false
         pass: "yes"
       })
       console.log(this.data);
-      const {eventId,deleteMsg,checkMsg}=this.data;
+      const {eventId,deleteMsg,checkMsg,selectedIds}=this.data;
       if(checkMsg){
         wx.redirectTo({
           url:'/pages/index/indexItem/upLoadText/upLoadText?eventId='+eventId
@@ -58,6 +59,25 @@ checkMsg:false
           console.log('请求失败', error);
         });
       }
+      else if(selectedIds){
+        post('/event/delete/batch', selectedIds, {}).then(res => {
+      console.log('请求成功', res.data);
+      // 删除后更新数据源
+      const updatedData = this.data.myMsgDataObj.filter(item => item.checked === false);
+      this.setData({
+        myMsgDataObj: updatedData
+      });
+      wx.showToast({
+        title: '删除成功',
+        icon: 'none'
+      });
+      wx.redirectTo({
+        url: '/pages/index/indexItem/myMsg/myMsg',
+      })
+    }).catch(error => {
+      console.log('请求失败', error);
+    });
+      }
     } else {
       wx.showToast({
         title: '输入错误',
@@ -72,11 +92,14 @@ checkMsg:false
 let eventId=options.eventId;
 let deleteMsg=options.deleteMsg;
 let checkMsg=options.checkMsg;
+const jsonString = decodeURIComponent(options.selectedIds);
+  const selectedIds = JSON.parse(jsonString);
 console.log(options);
 this.setData({
   eventId:eventId,
   deleteMsg:deleteMsg,
-  checkMsg:checkMsg
+  checkMsg:checkMsg,
+  selectedIds:selectedIds
 })
   },
 

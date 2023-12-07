@@ -22,8 +22,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "时刻为你",
     "navigationBarTextStyle": "black",
-    "initialRenderingCache": "static",
-    "enablePullDownRefersh": "true"
+    "initialRenderingCache": "static"
   },
   "tabBar": {
     "custom": true,

@@ -10,7 +10,6 @@ Component({
   storeBindings: {
     store,
     fields: {
-      sum: 'sum',
       active: 'activeTabBarIndex'
     },
     actions: {
@@ -18,11 +17,6 @@ Component({
     },
   },
   observers: {
-    'sum': function (val) {
-      this.setData({
-        'list[1].info': val
-      })
-    }
   },
   /**
    * 组件的属性列表

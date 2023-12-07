@@ -1,5 +1,5 @@
 // pages/index/indexItem/myMsg/myMsg.js
-const { get, post } = require('../../../../utils/request');
+const { get, post,deleteRequest } = require('../../../../utils/request');
 Page({
 
   /**
@@ -7,6 +7,8 @@ Page({
    */
   data: {
     myMsgDataObj:'',
+    selectedItems: [],
+    result: ['a', 'b'],
   },
   fullMsg(e){
     let eventId=e.currentTarget.dataset.id;
@@ -15,9 +17,35 @@ wx.redirectTo({
   url: '/pages/coverPage/cover?eventId='+eventId+'&checkMsg=true',
 })
   },
-  getId(e){
-    console.log(e);
+  checkboxChange(e) {
+   let id=e.currentTarget.dataset.id;
+    let checked=e.currentTarget.dataset.checked;
+    const updatedData = this.data.myMsgDataObj.map(item => {
+      if (item.id === id) {
+        item.checked =!item.checked ;
+        console.log(id);
+      }
+      return item;
+    });
+
+    this.setData({
+      myMsgDataObj: updatedData
+    });
+    console.log(updatedData);
   },
+  batchDelete() {
+    const selectedItems = this.data.myMsgDataObj.filter(item => item.checked === true);
+    const selectedIds = selectedItems.map(item => item.id);
+    const jsonString = encodeURIComponent(JSON.stringify(selectedIds));
+    // 执行删除操作，调用 API 或更新数据源等
+    console.log('选中的待删除项：', selectedItems);
+    console.log('选中项的 ID：', selectedIds);
+    wx.navigateTo({
+      url: '/pages/coverPage/cover?selectedIds='+jsonString,
+    })
+    
+  },
+  
   onClose(e) {
     let eventId=e.currentTarget.dataset.id;
     wx.showModal({
@@ -48,6 +76,12 @@ get('/event/users/'+id,{},{}).then(res => {
     const createDate = new Date(item.createTime);
     const formattedDate = createDate.toLocaleDateString();
     item.createTime = formattedDate;
+  });
+  res.data=res.data.map(item=>{
+    return {
+      ...item,
+      checked:false
+    };
   });
   this.setData({
     myMsgDataObj:res.data

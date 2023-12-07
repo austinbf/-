@@ -17,7 +17,6 @@
 class="datetimepicker"
   type="date"
   value="{{ currentDate }}"
-  bind:input="onInput"
   min-date="{{ minDate }}"
   formatter="{{ formatter }}"
   visible-item-count="4"
