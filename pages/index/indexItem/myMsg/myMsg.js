@@ -9,7 +9,6 @@ Page({
     myMsgDataObj:'',
     selectedItems: [],
     result: ['a', 'b'],
-    batchDelete:false
   },
   fullMsg(e){
     let eventId=e.currentTarget.dataset.id;
@@ -34,31 +33,25 @@ wx.redirectTo({
     });
     console.log(updatedData);
   },
+  deleteInfo(){
+    const selectedItems = this.data.myMsgDataObj.filter(item => item.checked === true);
+    const selectedIds = selectedItems.map(item => item.id);
+  },
   batchDelete() {
     const selectedItems = this.data.myMsgDataObj.filter(item => item.checked === true);
     const selectedIds = selectedItems.map(item => item.id);
+    const jsonArrayString = JSON.stringify(selectedIds);
+const encodedJsonArrayString = encodeURIComponent(jsonArrayString);
     // 执行删除操作，调用 API 或更新数据源等
     console.log('选中的待删除项：', selectedItems);
     console.log('选中项的 ID：', selectedIds);
     wx.redirectTo({
-      url: '/pages/coverPage/cover?batchDelete='+false,
+      url: '../../../coverPage/cover?selectedIds='+encodedJsonArrayString+'&batchDelete=true'
     })
-    if(this.data.batchDelete){
-      post('/event/delete/batch', selectedIds, {}).then(res => {
-        console.log('请求成功', res.data);
-        // 删除后更新数据源
-        const updatedData = this.data.myMsgDataObj.filter(item => item.checked === false);
-        this.setData({
-          myMsgDataObj: updatedData
-        });
-        wx.showToast({
-          title: '删除成功',
-          icon: 'none'
-        });
-      }).catch(error => {
-        console.log('请求失败', error);
-      });
-    }  
+    const updatedData = this.data.myMsgDataObj.filter(item => item.checked === false);
+    this.setData({
+      myMsgDataObj: updatedData
+    });
   },
   
   onClose(e) {
@@ -84,13 +77,14 @@ console.log(this.data.myMsgDataObj);
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log('mymsg',options);
     let id=wx.getStorageSync('id');
-    if(options.batchDelete){
-      let batchDelete=options.batchDelete;
-      this.setData({
-        batchDelete:batchDelete
-      });
-    }
+    // if(options.batchDelete){
+    //   let batchDelete=options.batchDelete;
+    //   this.setData({
+    //     batchDelete:batchDelete
+    //   });
+    // }
    
 get('/event/users/'+id,{},{}).then(res => {
   console.log('请求成功', res);
@@ -125,7 +119,7 @@ get('/event/users/'+id,{},{}).then(res => {
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    const isAuthenticated = wx.getStorageSync('isAuthenticated'); // 获取认证状态
   },
 
   /**

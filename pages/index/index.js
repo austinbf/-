@@ -62,7 +62,7 @@ Page({
    let confirmLogIN=wx.getStorageSync('confirmLogIn');
     if(token){
       if(confirmLogIN!=true){
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/coverPage/cover?beforeUse='+true,
         })
       }     
@@ -70,7 +70,7 @@ Page({
     else {
       console.log('获取token失败');
       wx.setStorageSync('confirmLogIn', false);
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/loginAndregister/loginAndRegister',
       })
     }

@@ -95,7 +95,7 @@ this.setData({
   showLogIn:true
 })
 wx.setStorageSync('token', '');
-wx.navigateTo({
+wx.redirectTo({
   url: '/pages/loginAndregister/loginAndRegister',
 })
 },

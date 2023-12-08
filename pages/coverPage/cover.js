@@ -13,8 +13,9 @@ deleteConfirm:'',
 eventId:'',
 deleteMsg:false,
 checkMsg:false,
-batchDelete:'',
-beforeUse:''
+batchDelete:false,
+beforeUse:'',
+selectedIds:''
   },
   
 
@@ -29,10 +30,10 @@ beforeUse:''
     // 进行验证逻辑，验证成功后跳转
     if (this.data.password == password1) {
       this.setData({
-        pass: "yes"
+        pass: "yes",
       })
       console.log(this.data);
-      const {eventId,deleteMsg,checkMsg,batchDelete,beforeUse}=this.data;
+      const {eventId,deleteMsg,checkMsg,batchDelete,beforeUse,selectedIds}=this.data;
       if(checkMsg){
         wx.redirectTo({
           url:'/pages/index/indexItem/upLoadText/upLoadText?eventId='+eventId
@@ -60,11 +61,24 @@ beforeUse:''
           console.log('请求失败', error);
         });
       }
-      else if(batchDelete){
-        wx.redirectTo({
-          url: '/pages/index/indexItem/myMsg/myMsg?batchDelete='+true,
-        })
-        batchDelete='';
+      else if(batchDelete==true){
+        wx.setStorageSync('isAuthenticated', true); // 保存认证状态到本地缓存
+        post('/event/delete/batch', selectedIds, {}).then(res => {
+          console.log('请求成功', res.data);
+          // 删除后更新数据源
+          wx.redirectTo({
+            url: '/pages/index/indexItem/myMsg/myMsg',
+          })
+          wx.showToast({
+            title: '删除成功',
+            icon: 'none'
+          });
+        }).catch(error => {
+          console.log('请求失败', error);
+        });
+        this.setData({
+          batchDelete: false
+        });
       }
       else if(beforeUse){
 wx.switchTab({
@@ -89,12 +103,22 @@ let checkMsg=options.checkMsg;
 let batchDelete=options.batchDelete;
 let beforeUse=options.beforeUse;
 console.log(options);
+if(options.selectedIds){
+  const encodedJsonArrayString = options.selectedIds;
+  const jsonArrayString = decodeURIComponent(encodedJsonArrayString);
+  const passedArray = JSON.parse(jsonArrayString);
+  console.log(passedArray); // 输出传递过来的数组
+  this.setData({
+    selectedIds:passedArray,
+    batchDelete:true
+  })
+}
+
 this.setData({
   eventId:eventId,
   deleteMsg:deleteMsg,
   checkMsg:checkMsg,
-  batchDelete:batchDelete,
-  beforeUse:beforeUse
+  beforeUse:beforeUse,
 })
   },
 
