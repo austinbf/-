@@ -13,7 +13,8 @@ deleteConfirm:'',
 eventId:'',
 deleteMsg:false,
 checkMsg:false,
-batchDelete:''
+batchDelete:'',
+beforeUse:''
   },
   
 
@@ -31,7 +32,7 @@ batchDelete:''
         pass: "yes"
       })
       console.log(this.data);
-      const {eventId,deleteMsg,checkMsg,batchDelete}=this.data;
+      const {eventId,deleteMsg,checkMsg,batchDelete,beforeUse}=this.data;
       if(checkMsg){
         wx.redirectTo({
           url:'/pages/index/indexItem/upLoadText/upLoadText?eventId='+eventId
@@ -63,6 +64,13 @@ batchDelete:''
         wx.redirectTo({
           url: '/pages/index/indexItem/myMsg/myMsg?batchDelete='+true,
         })
+        batchDelete='';
+      }
+      else if(beforeUse){
+wx.switchTab({
+  url: '/pages/index/index',
+})
+wx.setStorageSync('confirmLogIn', true);
       }
     } else {
       wx.showToast({
@@ -79,12 +87,14 @@ let eventId=options.eventId;
 let deleteMsg=options.deleteMsg;
 let checkMsg=options.checkMsg;
 let batchDelete=options.batchDelete;
+let beforeUse=options.beforeUse;
 console.log(options);
 this.setData({
   eventId:eventId,
   deleteMsg:deleteMsg,
   checkMsg:checkMsg,
-  batchDelete:true
+  batchDelete:batchDelete,
+  beforeUse:beforeUse
 })
   },
 

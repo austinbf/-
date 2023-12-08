@@ -58,6 +58,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    let token=wx.getStorageSync('token');
+   let confirmLogIN=wx.getStorageSync('confirmLogIn');
+    if(token){
+      if(confirmLogIN!=true){
+        wx.navigateTo({
+          url: '/pages/coverPage/cover?beforeUse='+true,
+        })
+      }     
+    }
+    else {
+      console.log('获取token失败');
+      wx.setStorageSync('confirmLogIn', false);
+      wx.navigateTo({
+        url: '/pages/loginAndregister/loginAndRegister',
+      })
+    }
   this.storeBindings=createStoreBindings(this,{
     store,
     fields:[],
@@ -91,7 +107,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-    this.storeBindings. destroyStoreBindings();
+    // this.storeBindings. destroyStoreBindings();
   },
 
   /**

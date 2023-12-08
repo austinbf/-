@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/loginAndregister/loginAndRegister",
     "pages/index/index",
     "pages/coverPage/cover",
+    "pages/loginAndregister/loginAndRegister",
     "pages/remindPage/remind",
     "pages/my/my",
     "pages/index/indexItem/showPriciple/show",
