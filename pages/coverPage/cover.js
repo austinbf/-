@@ -53,7 +53,7 @@ selectedIds:''
             title: '删除成功',
             icon:'none'
           })
-          wx.redirectTo({
+          wx.switchTab({
             url: '/pages/index/indexItem/myMsg/myMsg',
           });
         })
@@ -66,7 +66,7 @@ selectedIds:''
         post('/event/delete/batch', selectedIds, {}).then(res => {
           console.log('请求成功', res.data);
           // 删除后更新数据源
-          wx.redirectTo({
+          wx.switchTab({
             url: '/pages/index/indexItem/myMsg/myMsg',
           })
           wx.showToast({

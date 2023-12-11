@@ -1,21 +1,5 @@
-/* .uploadText input:nth-child(1){
-  
-  border-bottom: black 1px solid;
-  font:larger bolder;
-  font-weight: bolder;
-  font-size: 40rpx;
-}
-.uploadText input:nth-child(2){
-  height:60%;
-  background-color: blue;
-}
-.uploadText{
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
- */
- .datetimepicker{
+
+.datetimepicker{
  position: relative;
  top:30%;
  }

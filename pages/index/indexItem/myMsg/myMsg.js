@@ -69,43 +69,40 @@ const encodedJsonArrayString = encodeURIComponent(jsonArrayString);
     })
   },
 showData(){
-
-
-console.log(this.data.myMsgDataObj);
+  let id=wx.getStorageSync('id');
+  // if(options.batchDelete){
+  //   let batchDelete=options.batchDelete;
+  //   this.setData({
+  //     batchDelete:batchDelete
+  //   });
+  // }
+ 
+get('/event/users/'+id,{},{}).then(res => {
+console.log('请求成功', res);
+res.data.forEach((item) => {
+  const createDate = new Date(item.createTime);
+  const formattedDate = createDate.toLocaleDateString();
+  item.createTime = formattedDate;
+});
+res.data=res.data.map(item=>{
+  return {
+    ...item,
+    checked:false
+  };
+});
+this.setData({
+  myMsgDataObj:res.data
+})
+})
+.catch(error => {
+console.log('请求失败', error);
+});
 },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log('mymsg',options);
-    let id=wx.getStorageSync('id');
-    // if(options.batchDelete){
-    //   let batchDelete=options.batchDelete;
-    //   this.setData({
-    //     batchDelete:batchDelete
-    //   });
-    // }
    
-get('/event/users/'+id,{},{}).then(res => {
-  console.log('请求成功', res);
-  res.data.forEach((item) => {
-    const createDate = new Date(item.createTime);
-    const formattedDate = createDate.toLocaleDateString();
-    item.createTime = formattedDate;
-  });
-  res.data=res.data.map(item=>{
-    return {
-      ...item,
-      checked:false
-    };
-  });
-  this.setData({
-    myMsgDataObj:res.data
-  })
-})
-.catch(error => {
-  console.log('请求失败', error);
-});
   },
 
   /**
@@ -119,6 +116,9 @@ get('/event/users/'+id,{},{}).then(res => {
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    var that =this;
+    that.showData();
+    this.onLoad();
     const isAuthenticated = wx.getStorageSync('isAuthenticated'); // 获取认证状态
   },
 

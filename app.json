@@ -36,7 +36,7 @@
       "text": "主页"
     },
      {
-      "pagePath": "pages/remindPage/remind",
+      "pagePath": "pages/index/indexItem/myMsg/myMsg",
       "iconPath": "/images/icon/选中后的tabbar/3.1旺旺.png",
       "selectedIconPath": "/images/icon/选中后的tabbar/3.1旺旺-选中.png",
       "text": "提醒"
