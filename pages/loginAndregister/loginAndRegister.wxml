@@ -62,7 +62,7 @@
 <view class="shadow shadow-1"></view><view class="shadow shadow-2"></view>
 <!-- 说明 -->
 <view class="bottom-box">
-  <checkbox checked="{{checkboxValue}}"  bindtap="handleCheckboxChange"></checkbox>
+  <checkbox checked="{{checkboxValue}}" class="checkBox"  bindtap="handleCheckboxChange"></checkbox>
 
   我同意 <text style="color: #65A6FE;margin-left:10rpx ;margin-right: 10rpx;" >服务条款</text> 和<txet style="color: #65A6FE;margin-left:10rpx ;margin-right: 10rpx;" >隐私政策</txet>
 

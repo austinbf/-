@@ -1,6 +1,0 @@
-
-<view class="container">
-  <button bindtap="startRecord">开始录音</button>
-  <button bindtap="stopRecord">停止录音并上传</button>
-</view>
-

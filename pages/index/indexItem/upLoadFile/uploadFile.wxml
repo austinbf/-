@@ -1,0 +1,21 @@
+
+<view class="text">文件
+<text class="delete" bindtap="batchDelete">删除</text>
+</view>
+
+<view class="fileContainer">
+<image src="/images/type/word.png" class="docType"/>
+<view class="name">{{ myFileDataObj.name}}</view>
+<checkbox class="date"   ></checkbox>
+</view>
+<view class="fileContainer">
+<image src="/images/type/image.png" class="docType"/>
+<view class="name">{{ myFileDataObj.name}}</view>
+<checkbox class="date"></checkbox>
+</view>
+<view class="fileContainer">
+<image src="/images/type/pdf.png" class="docType"/>
+<view class="name">{{ myFileDataObj.name}}</view>
+<checkbox class="date"   ></checkbox>
+</view>
+<button bindtap="submitFile" class="add">上传文件</button>

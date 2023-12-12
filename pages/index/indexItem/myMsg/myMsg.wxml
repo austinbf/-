@@ -1,6 +1,6 @@
 
 <van-search value="{{ value }}" placeholder="搜索" />
-<view class="text">信息
+<view class="text">提醒
 <text class="delete" bindtap="batchDelete">删除</text>
 </view>
 

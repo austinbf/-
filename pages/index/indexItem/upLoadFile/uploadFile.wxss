@@ -1,0 +1,68 @@
+.name{
+
+  position: relative;
+  left:20%;
+  bottom: 20%;
+  font-size: 16px;
+  color: black;
+  }
+  .delete{
+    color:black;
+    font-size:16px;
+    position: relative;
+    left:70%;
+    font-weight:normal;
+  }
+  .add{
+    position: absolute;
+  width: 100%;
+    top:88%;
+    background-color:#3B96DC ;
+    height: 100rpx;
+    font-size: 20px;
+    color: white;
+
+  }
+  .date{
+    color:black;
+    font-size:16px;
+    position: relative;
+    left:88%;
+    bottom: 45%;
+    font-weight:normal;
+  
+   
+  
+  }
+  .fileContainer {
+    height: 150rpx; /* 自定义高度，可以根据需要进行调整 */
+  }
+  .docType{
+    width: 80rpx;
+    height:80rpx;
+    position: relative;
+    top:30%;
+    color: black;
+   left: 5%;
+  }
+  checkbox .wx-checkbox-input {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 50%;
+  }
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: #0394F0;
+    border-color:#0394F0;
+  }
+  /*checkbox选中后图标样式  */
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    width: 20rpx;
+    height: 20rpx;  
+    line-height: 20rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }

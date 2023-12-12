@@ -8,7 +8,7 @@
     "pages/index/indexItem/showPriciple/show",
     "pages/index/indexItem/myMsg/myMsg",
     "pages/index/indexItem/upLoadText/upLoadText",
-    "pages/index/indexItem/upLoadRecord/upLoadRecord",
+    "pages/index/indexItem/upLoadFile/uploadFile",
     "pages/index/indexItem/upLoadVideo/upLoadVideo",
     "pages/index/indexItem/deleteMsg/deleteMsg",
     "pages/my/settingsPages/zhaomu/zhaomu",
@@ -60,7 +60,9 @@
     "van-steps": "@vant/weapp/steps/index",
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
     "van-cell": "miniprogram_npm/@vant/weapp/cell/index",
-    "van-cell-group": "miniprogram_npm/@vant/weapp/cell-group/index"
+    "van-cell-group": "miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index"
   },
   "sitemapLocation": "sitemap.json"
 }

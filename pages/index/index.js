@@ -14,7 +14,7 @@ Page({
 // "pagePath":"./indexItem/showPriciple/show"
 // },
 
-{"text":'上传信息',
+{"text":'上传提醒',
 "iconPath":"../../images/icon/主页/批量上传.png",
 "pagePath":"./indexItem/upLoadText/upLoadText"},
 // {"text":'我的声明',
@@ -23,7 +23,8 @@ Page({
 // },
 {"text":'上传文件',
 "iconPath":"../../images/icon/主页/批量上传.png",
-"pagePath":"./indexItem/upLoadRecord/upLoadRecord"},
+"pagePath":"/pages/index/indexItem/upLoadFile/uploadFile"},
+
 // {"text":'上传视频',
 // "iconPath":"../../images/icon/主页/批量上传.png",
 // "pagePath":"./indexItem/upLoadVideo/upLoadVideo"},

@@ -1,4 +1,4 @@
-<van-button type="primary" bind:click="onClickShow"></van-button>
+
 <van-overlay show="{{ show }}" bind:click="onClickHide" />
 <image class="blur-image" src="../../images/QQ图片20231203095838.jpg"/>
 <image class="lock"   src="../../images/icon/主页/锁.png"></image>

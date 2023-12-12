@@ -119,7 +119,6 @@ console.log('请求失败', error);
     var that =this;
     that.showData();
     this.onLoad();
-    const isAuthenticated = wx.getStorageSync('isAuthenticated'); // 获取认证状态
   },
 
   /**
