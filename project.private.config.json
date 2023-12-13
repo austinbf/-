@@ -10,7 +10,7 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/index/index",
+          "pathName": "pages/my/settingsPages/emergency/emergency",
           "query": "",
           "launchMode": "default",
           "scene": null
