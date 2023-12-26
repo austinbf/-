@@ -10,11 +10,18 @@
   color: #3B96DC;
   font-weight:800;
 }
+.all{
+  color:black;
+  font-size:16px;
+  position: relative;
+  left:50%;
+  font-weight:normal;
+}
 .delete{
   color:black;
   font-size:16px;
   position: relative;
-  left:70%;
+  left:60%;
   font-weight:normal;
 }
 .custom-swipe-cell {

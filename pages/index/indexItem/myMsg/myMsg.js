@@ -9,6 +9,7 @@ Page({
     myMsgDataObj:'',
     selectedItems: [],
     result: ['a', 'b'],
+    allChecked:false
   },
   fullMsg(e){
     let eventId=e.currentTarget.dataset.id;
@@ -53,7 +54,22 @@ const encodedJsonArrayString = encodeURIComponent(jsonArrayString);
       myMsgDataObj: updatedData
     });
   },
-  
+  setChecked(){
+    let myMsgDataObj=this.data.myMsgDataObj
+    let allChecked=this.data.allChecked
+    let updataChecked=myMsgDataObj;
+this.setData({
+  allChecked:!allChecked
+})
+    for (var i = 0; i <updataChecked.length; i++) {
+    updataChecked[i].checked=allChecked;
+    }
+    this.setData({
+      myMsgDataObj:updataChecked
+    })
+    console.log(myMsgDataObj);
+    
+  },
   onClose(e) {
     let eventId=e.currentTarget.dataset.id;
     wx.showModal({
